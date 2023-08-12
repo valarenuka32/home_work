@@ -16,7 +16,7 @@ const getCategoryList = {
     limit: Joi.number().integer().allow(""),
     page: Joi.number().integer().allow(""),
   }),
-}
+};
 
 module.exports = {
   createcategory,

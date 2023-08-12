@@ -17,6 +17,6 @@ router.get(
       "/category-list",
       validate(categoryValidaton.getCategoryList),
       categoryControler.getCategoryList
-)
+);
 
 module.exports = router;
