@@ -1,4 +1,4 @@
-const { Category }=require("../models");
+const { Category } = require("../models");
 
 /**
  * Create user
@@ -6,9 +6,9 @@ const { Category }=require("../models");
  * @returns {Promise<Category>}
  */
 const createcategory = async (reqBody) => {
-    return Category.create(reqBody);
-  };
+  return Category.create(reqBody);
+};
 
-module.exports={
-    createcategory
+module.exports = {
+  createcategory
 }

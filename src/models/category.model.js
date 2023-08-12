@@ -2,17 +2,17 @@ const mongoose = require("mongoose");
 
 const categorySchema = new mongoose.Schema(
     {
-        category_name:{
-            type:String,
-            trim:true,
+        category_name: {
+            type: String,
+            trim: true,
         },
-        category_desc:{
-            type:String,
-            trim:true,
+        category_desc: {
+            type: String,
+            trim: true,
         },
-        is_active:{
-            type:Boolean,
-            default:true,
+        is_active: {
+            type: Boolean,
+            default: true,
         },
     },
     {
@@ -21,6 +21,6 @@ const categorySchema = new mongoose.Schema(
     }
 );
 
-const Category = mongoose.model("category",categorySchema)
+const Category = mongoose.model("category", categorySchema)
 
-module.exports=Category;
+module.exports = Category;

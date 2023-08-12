@@ -1,6 +1,6 @@
-const express=require("express");
-const { categoryValidaton }=require("../../validations");
-const { categoryControler }=require("../../controllers");
+const express = require("express");
+const { categoryValidaton } = require("../../validations");
+const { categoryControler } = require("../../controllers");
 const validate = require("../../middlewares/validate");
 
 const router = express.Router();
@@ -12,4 +12,11 @@ router.post(
       categoryControler.createcategory
 );
 
-module.exports=router;
+// get category list
+router.get(
+      "/category-list",
+      validate(categoryValidaton.getCategoryList),
+      categoryControler.getCategoryList
+)
+
+module.exports = router;

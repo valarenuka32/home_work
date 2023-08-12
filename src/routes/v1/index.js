@@ -1,8 +1,8 @@
-const express=require("express");
-const categoryRoutes=require("./category.route");
+const express = require("express");
+const categoryRoutes = require("./category.route");
 
-const router=express.Router();
+const router = express.Router();
 
-router.use("/category",categoryRoutes);
+router.use("/category", categoryRoutes);
 
-module.exports=router;
+module.exports = router;
