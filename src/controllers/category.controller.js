@@ -33,10 +33,10 @@ const getCategoryList = async (req,res) =>{
     } catch (error) {
         
     }
-}
+};
 
 
 module.exports = {
     createcategory,
     getCategoryList
-}
+};
