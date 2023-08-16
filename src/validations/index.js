@@ -1,0 +1,1 @@
+module.exports.categoryValidaton=require("./category.validation");
