@@ -1,1 +1,2 @@
-module.exports.categoryControler=require("./category.controller");
+module.exports.categoryControler = require("./category.controller");
+module.exports.userController = require("./user.controller");

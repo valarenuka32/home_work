@@ -1,18 +1,22 @@
 const mongoose = require("mongoose");
 
-const categorySchema = new mongoose.Schema(
+const productSchema = new mongoose.Schema(
     {
-        category_name: {
+        product_name: {
             type: String,
             trim: true,
         },
-        category_desc: {
+        product_price: {
+            type: Number,
+            trim: true,
+        },
+        product_desc: {
             type: String,
             trim: true,
         },
         is_active: {
             type: Boolean,
-            default: true,
+            trim: true,
         },
     },
     {
@@ -20,6 +24,5 @@ const categorySchema = new mongoose.Schema(
         versionKey: false,
     }
 );
-
-const category = mongoose.model("categorys", categorySchema);
-module.exports = category;
+const product = mongoose.model("products", productSchema);
+module.exports = product;
