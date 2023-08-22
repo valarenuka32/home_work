@@ -18,5 +18,4 @@ router.get(
       validate(hotelValidation.gethotelList),
       hotelControler.gethotelList
 );
-
 module.exports = router;
