@@ -1,7 +1,7 @@
 const express = require("express");
 const categoryRoutes = require("./category.route");
 const userRoutes = require("./user.route");
-const hotelRoutes = require("./user.route");
+const hotelRoutes = require("./hotel.route");
 
 const router = express.Router();
 

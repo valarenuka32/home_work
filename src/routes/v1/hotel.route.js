@@ -1,22 +1,22 @@
 const express = require("express");
-const { hotelValidaton } = require("../../validations");
 const { hotelControler } = require("../../controllers");
+const { hotelValidation } = require("../../validations");
 const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
 // hotel detiles create
 router.post(
-      "/create-category",
-      validate(categoryValidaton.createcategory),
-      categoryControler.createcategory
+      "/createhotel",
+      validate(hotelValidation.createhotel),
+      hotelControler.createhotel
 );
 
 // get hotel list
 router.get(
-      "/category-list",
-      validate(categoryValidaton.getCategoryList),
-      categoryControler.getCategoryList
+      "/list",
+      validate(hotelValidation.gethotelList),
+      hotelControler.gethotelList
 );
 
 module.exports = router;
