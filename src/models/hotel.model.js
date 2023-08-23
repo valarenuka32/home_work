@@ -10,17 +10,17 @@ const hotelSchema= new mongoose.Schema(
             type:String,
             trim:true,
         },
-        contact_number:{
-            type:Number,
-        },
-        room_no:{
-            type:Number,
-            trim:true
-        },
-        room_type:{
-            type:String,
-            trim:true,
-        },
+        // contact_number:{
+        //     type:Number,
+        // },
+        // room_no:{
+        //     type:Number,
+        //     trim:true
+        // },
+        // room_type:{
+        //     type:String,
+        //     trim:true,
+        // },
         is_active:{
             type:Boolean,
             default:true,
