@@ -18,4 +18,10 @@ router.get(
       validate(hotelValidation.gethotelList),
       hotelControler.gethotelList
 );
+// delete
+router.delete(
+      "/delete-hotel/:hotelId",
+      validate(hotelValidation.deletehotel),
+      hotelControler.deletehotel
+)
 module.exports = router;
