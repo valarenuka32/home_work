@@ -32,7 +32,7 @@ const gethotelList = async (req, res) => {
             ];
         }
 
-        const getList = await userService.gethotelList(filter, options);
+        const getList = await hotelService.gethotelList(filter, options);
 
         res.status(200).json({
             success: true,
@@ -47,4 +47,4 @@ const gethotelList = async (req, res) => {
 module.exports = {
     createhotel,
     gethotelList
-}
+};

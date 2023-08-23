@@ -9,7 +9,7 @@ const createhotel = async (reqBody) => {
     return hotel.create(reqBody);
 };
 const gethotelList = async (req, res) => {
-    return User.find();
+    return hotel.find();
 }
 
 module.exports = {

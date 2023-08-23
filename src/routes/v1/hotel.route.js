@@ -19,9 +19,9 @@ router.get(
       hotelControler.gethotelList
 );
 // delete
-router.delete(
-      "/delete-hotel/:hotelId",
-      validate(hotelValidation.deletehotel),
-      hotelControler.deletehotel
-)
+// router.delete(
+//       "/delete-hotel/:hotelId",
+//       validate(hotelValidation.deletehotel),
+//       hotelControler.deletehotel
+// );
 module.exports = router;
