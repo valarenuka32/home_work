@@ -10,9 +10,13 @@ const createhotel = async (reqBody) => {
 };
 const gethotelList = async (req, res) => {
     return hotel.find();
-}
+};
+// const deleteRecord = async (hotelId) => {
+//     return hotel.findByIdAndDelete(hotelId);
+// };
 
 module.exports = {
     createhotel,
-    gethotelList
+    gethotelList,
+    // deleteRecord
 };

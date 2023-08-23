@@ -21,12 +21,10 @@ const gethotelList = {
   }),
 };
 
-const deletehotel={
 
-}
 
 module.exports = {
     createhotel,
     gethotelList,
-    deletehotel
+
 };

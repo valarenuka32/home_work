@@ -21,7 +21,7 @@ router.get(
 // delete
 // router.delete(
 //       "/delete-hotel/:hotelId",
-//       validate(hotelValidation.deletehotel),
-//       hotelControler.deletehotel
+//       validate(hotelValidation.deleteRecord),
+//       hotelControler.deleteRecord
 // );
 module.exports = router;
