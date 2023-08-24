@@ -9,7 +9,7 @@ const createcategory = async (reqBody) => {
   return category.create(reqBody);
 };
 const getUserList = async (req, res) => {
-  return User.find();
+  return category.find();
 }
 
 module.exports = {
