@@ -46,29 +46,29 @@ const gethotelList = async (req, res) => {
 };
 
 // delete list
-// const deleteRecord = async (req, res) => {
-//     try {
-//         const hotelId = req.params.hotelId;
-//         const hotelExists = await hotelService.deleteRecord(hotelId);
-//         if (!hotelExists) {
-//             throw new Error("hotel detiles not found!");
-//         }
+const deleteRecord = async (req, res) => {
+    try {
+        const hotelId = req.params.hotelId;
+        const hotelExists = await hotelService.getCategoryById(hotelId);
+        if (!hotelExists) {
+            throw new Error("hotel detiles not found!");
+        }
 
-//         await hotelService.deleteRecord(hotelId);
+        await hotelService.deleteRecord(hotelId);
 
-//         res.status(200).json({
-//             success: true,
-//             message: "hotel detiles delete successfully!",
-//         });
-//     } catch (error) {
-//         res.status(400).json({
-//             success: false,
-//             message: error.message,
-//         });
-//     }
-// };
+        res.status(200).json({
+            success: true,
+            message: "hotel detiles delete successfully!",
+        });
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
 module.exports = {
     createhotel,
     gethotelList,
-    // deleteRecord
+    deleteRecord
 };

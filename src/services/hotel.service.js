@@ -11,12 +11,17 @@ const createhotel = async (reqBody) => {
 const gethotelList = async (req, res) => {
     return hotel.find();
 };
-// const deleteRecord = async (hotelId) => {
-//     return hotel.findByIdAndDelete(hotelId);
-// };
+const deleteRecord = async (hotelId) => {
+    return hotel.findByIdAndDelete(hotelId);
+};
+
+const getCategoryById = async (hotelId) => {
+    return hotel.findById(hotelId);
+  };
 
 module.exports = {
     createhotel,
     gethotelList,
-    // deleteRecord
+    deleteRecord,
+    getCategoryById
 };
