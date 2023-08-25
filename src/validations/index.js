@@ -3,3 +3,4 @@ module.exports.userValidation = require("./user.validation");
 module.exports.hotelValidation = require("./hotel.validation");
 module.exports.busValidaton = require("./bus.validation");
 module.exports.schoolValidaton = require("./school.validation");
+module.exports.stationaryValidation = require("./stationary.validations");

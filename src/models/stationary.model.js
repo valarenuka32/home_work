@@ -18,10 +18,6 @@ const stationarySchema = new mongoose.Schema(
             type: Number,
             default:0,
         },
-        stationery_supplier: {
-            type: String,
-            trim: true,
-        },
         is_active: {
             type: Boolean,
             default: true,
