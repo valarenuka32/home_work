@@ -16,7 +16,7 @@ const stationarySchema = new mongoose.Schema(
         },
         price: {
             type: Number,
-            trim: true,
+            default:0,
         },
         stationery_supplier: {
             type: String,

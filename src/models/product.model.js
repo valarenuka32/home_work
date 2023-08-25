@@ -6,9 +6,13 @@ const productSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
+        product_brand: {
+            type: String,
+            trim: true,
+        },
         product_price: {
             type: Number,
-            trim: true,
+            default:0,
         },
         product_desc: {
             type: String,

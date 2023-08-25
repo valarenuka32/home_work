@@ -14,7 +14,7 @@ router.post(
 //GET User List
 router.get(
     "/list",
-    validate(userValidation.getUserList),
+    // validate(userValidation.getUserList),
     userController.getUserList
 );
 

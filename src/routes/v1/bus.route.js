@@ -13,10 +13,17 @@ router.post(
 );
 
 // get bus list
-// router.get(
-//       "/bus-list",
-//       validate(busValidaton.getBusList),
-//       busControler.getBusList
-// );
+router.get(
+      "/bus-list",
+      // validate(busValidaton.getBusList),
+      busControler.getBusList
+);
+
+// bus list delete
+router.delete(
+      "/delete-bus/:busId",
+      // validate(hotelValidation.deleteRecord),
+      busControler.deleteRecord
+);
 
 module.exports = router;

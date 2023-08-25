@@ -10,15 +10,15 @@ const createUser = {
     }),
 };
 // Get user List
-const getUserList = {
-    query: Joi.object().keys({
-        search: Joi.string().trim().allow(""),
-        sortBy: Joi.string().trim().allow(""),
-        limit: Joi.number().integer().allow(""),
-        page: Joi.number().integer().allow(""),
-    })
-};
+// const getUserList = {
+//     query: Joi.object().keys({
+//         search: Joi.string().trim().allow(""),
+//         sortBy: Joi.string().trim().allow(""),
+//         limit: Joi.number().integer().allow(""),
+//         page: Joi.number().integer().allow(""),
+//     })
+// };
 module.exports = {
     createUser,
-    getUserList,
+    // getUserList,
 };

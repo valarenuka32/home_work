@@ -14,13 +14,13 @@ const schoolSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        studdent_id:{
+        studdent_id: {
             type: Number,
-            trim: true,
+            default: 0,
         },
-        std_contect:{
+        std_contect: {
             type: Number,
-            trim: true,
+            default: 0,
         },
         is_active: {
             type: Boolean,

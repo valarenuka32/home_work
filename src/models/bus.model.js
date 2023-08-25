@@ -8,7 +8,7 @@ const busSchema = new mongoose.Schema(
         },
         bus_number: {
             type: Number,
-            trim: true,
+            default:0,
         },
         route: {
             type: String,
@@ -20,7 +20,7 @@ const busSchema = new mongoose.Schema(
         },
         seat_number: {
             type: Number,
-            trim: true,
+            default:0,
         },
         is_active: {
             type: Boolean,

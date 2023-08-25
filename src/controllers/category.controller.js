@@ -31,12 +31,12 @@ const getCategoryList = async (req, res) => {
         const { search, ...options } = req.query;
         let filter = {};
 
-        if (search) {
-            filter.$or = [
-                { first_name: { $regex: search, $options: "i" } },
-                { last_name: { $regex: search, $options: "i" } },
-            ];
-        }
+        // if (search) {
+        //     filter.$or = [
+        //         { first_name: { $regex: search, $options: "i" } },
+        //         { last_name: { $regex: search, $options: "i" } },
+        //     ];
+        // }
 
         const getList = await userService.getCategoryList(filter, options);
 

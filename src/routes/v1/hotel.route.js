@@ -15,7 +15,7 @@ router.post(
 // get hotel list
 router.get(
       "/list",
-      validate(hotelValidation.gethotelList),
+      // validate(hotelValidation.gethotelList),
       hotelControler.gethotelList
 );
 // delete
