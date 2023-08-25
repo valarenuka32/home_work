@@ -33,5 +33,5 @@ const schoolSchema = new mongoose.Schema(
     }
 );
 
-const school = mongoose.model("categorys", schoolSchema);
+const school = mongoose.model("school", schoolSchema);
 module.exports = school;
