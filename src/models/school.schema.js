@@ -6,9 +6,9 @@ const schoolSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        school_branch: {
-            type: String,
-            trim: true,
+        school_code: {
+            type: Number,
+            default:0,
         },
         school_address: {
             type: String,

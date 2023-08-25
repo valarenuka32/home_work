@@ -16,7 +16,7 @@ router.post(
 router.get(
       "/school-list",
       // validate(schoolValidaton.getBusList),
-      schoolControler.getBusList
+      schoolControler.getschoolList
 );
 
 // bus list delete
