@@ -6,7 +6,7 @@ const { bus } = require("../models");
  * @returns {Promise<User>}
  */
 const createBus = async (reqBody) => {
-    return bus.create( { $or:[{is_active:true}] } ); 
+    return bus.create( { $or:[{is_active:true}] } );
 };
 const getBusList = async (req, res) => {
     return bus.find();
