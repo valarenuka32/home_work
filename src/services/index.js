@@ -4,3 +4,7 @@ module.exports.hotelService = require("./hotel.service");
 module.exports.busService = require("./bus.service");
 module.exports.schoolService = require("./school.service");
 module.exports.stationaryService = require("./stationary.service");
+module.exports.travelService = require("./travel.service");
+module.exports.PharmacyService = require("./Pharmacy.service");
+module.exports.jewelleryService = require("./jewellery.service");
+module.exports.movieService = require("./movie.service");

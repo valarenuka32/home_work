@@ -18,10 +18,6 @@ const PharmacySchema = new mongoose.Schema(
             type: Number,
             default: 0,
         },
-        expiry_date: {
-            type: Number,
-            default: 0,
-        },
         is_active: {
             type: Boolean,
             default: false,

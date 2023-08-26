@@ -6,10 +6,6 @@ const movieSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        release_date: {
-            type: Number,
-            default:0,
-        },
         director_name: {
             type: String,
             trim: true,

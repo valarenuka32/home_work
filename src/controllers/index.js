@@ -4,3 +4,7 @@ module.exports.hotelControler = require("./hotel.controller");
 module.exports.busControler = require("./bus.controller");
 module.exports.schoolControler = require("./school.controller");
 module.exports.stationaryControler = require("./stationary.controller");
+module.exports.travelControler = require("./travel.controller");
+module.exports.PharmacyControler = require("./Pharmacy.controller");
+module.exports.jewelleryControler = require("./jewellery.vontroller");
+module.exports.movieControler = require("./movie.controller");

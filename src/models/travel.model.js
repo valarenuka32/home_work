@@ -18,10 +18,6 @@ const travelSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        opening_Hours: {
-            type: Number,
-            default: 0,
-        },
         payment: {
             type: Number,
             default: 0,
