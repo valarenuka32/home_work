@@ -1,34 +1,30 @@
 const mongoose = require("mongoose");
 
-const travelSchema = new mongoose.Schema(
+const jewellerySchema = new mongoose.Schema(
     {
-        travel_name: {
+        jewellery_name: {
             type: String,
             trim: true,
         },
-        telephone: {
-            type: Number,
-            default: 0,
-        },
-        email: {
+        jewellery_material: {
             type: String,
             trim: true,
         },
-        address_Country: {
+        gemstone: {
             type: String,
             trim: true,
         },
-        opening_Hours: {
+        price: {
             type: Number,
             default: 0,
         },
-        payment: {
-            type: Number,
-            default: 0,
+        description: {
+            type: String,
+            trim: true,
         },
         is_active: {
             type: Boolean,
-            default: true,
+            default: false,
         },
     },
     {
@@ -37,5 +33,5 @@ const travelSchema = new mongoose.Schema(
     }
 );
 
-const travel = mongoose.model("travel", travelSchema);
-module.exports = travel;
+const jewellery = mongoose.model("jewellery", jewellerySchema);
+module.exports = jewellery;
