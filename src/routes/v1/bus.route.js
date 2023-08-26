@@ -5,7 +5,7 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
-// create category
+// create bus
 router.post(
       "/create-bus",
       validate(busValidaton.createBus),

@@ -1,0 +1,81 @@
+const { groceryService } = require("../services");
+
+/** create grocery */
+const creategrocery = async (req, res) => {
+    try {
+        const reqBody = req.body;
+        console.log(reqBody);
+        // const categoryExists = await categoryService.getUserByEmail(reqBody.email);
+        // if (categoryExists) {
+        //     throw new Error("User already created by this email!");
+        // }
+
+        const grocery = await groceryService.creategrocery(reqBody);
+        if (!grocery) {
+            throw new Error("Something went wrong, please try again or later!");
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "grocery detiles create successfully!",
+            data: { grocery },
+        });
+    } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
+    }
+};
+
+// get grocery list
+const getgroceryList = async (req, res) => {
+    try {
+        const { search, ...options } = req.query;
+        let filter = {};
+
+        // if (search) {
+        //     filter.$or = [
+        //         { first_name: { $regex: search, $options: "i" } },
+        //         { last_name: { $regex: search, $options: "i" } },
+        //     ];
+        // }
+
+        const getList = await groceryService.getgroceryList(filter, options);
+
+        res.status(200).json({
+            success: true,
+            message: "grocery movie list successfully!",
+            data: getList,
+        });
+    } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
+    }
+};
+
+// delete list
+const deleteRecord = async (req, res) => {
+    try {
+        const groceryId = req.params.groceryId;
+        const groceryExists = await groceryService.getgroceryById(groceryId);
+        if (!groceryExists) {
+            throw new Error("grocery detiles not found!");
+        }
+
+        await groceryService.deleteRecord(groceryId);
+
+        res.status(200).json({
+            success: true,
+            message: "grocery detiles delete successfully!",
+        });
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
+
+module.exports = {
+    creategrocery,
+    getgroceryList,
+    deleteRecord
+};
+

@@ -8,3 +8,5 @@ module.exports.travelValidaton = require("./travel.validation");
 module.exports.PharmacyValidaton = require("./Pharmacy.validaton");
 module.exports.jewelleryValidaton = require("./jewellery.validation");
 module.exports.movieValidaton = require("./movie.validation");
+module.exports.musicValidaton = require("./music.validation");
+module.exports.groceryValidaton = require("./grocery.validaton");

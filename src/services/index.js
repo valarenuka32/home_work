@@ -8,3 +8,5 @@ module.exports.travelService = require("./travel.service");
 module.exports.PharmacyService = require("./Pharmacy.service");
 module.exports.jewelleryService = require("./jewellery.service");
 module.exports.movieService = require("./movie.service");
+module.exports.musicService = require("./music.service");
+module.exports.groceryService = require("./grocery.service");

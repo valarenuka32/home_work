@@ -9,5 +9,5 @@ module.exports.travel = require("./travel.model");
 module.exports.Pharmacy = require("./Pharmacy.model");
 module.exports.jewellery = require("./jewellery.model");
 module.exports.movie = require("./movie.model");
-module.exports.music = require("./movie.model");
+module.exports.music = require("./music.model");
 module.exports.grocery = require("./grocery.model");

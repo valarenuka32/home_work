@@ -8,3 +8,5 @@ module.exports.travelControler = require("./travel.controller");
 module.exports.PharmacyControler = require("./Pharmacy.controller");
 module.exports.jewelleryControler = require("./jewellery.vontroller");
 module.exports.movieControler = require("./movie.controller");
+module.exports.musicControler = require("./music.controller");
+module.exports.groceryControler = require("./grocery.controller");
