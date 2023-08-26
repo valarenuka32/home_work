@@ -9,7 +9,7 @@ const createTravel = async (reqBody) => {
     return travel.create(reqBody);
 };
 const getTravelList = async (req, res) => {
-    return travel.find();
+    return travel.find({$or:[{is_active:true,payment:7000}]});
 };
 const deleteRecord = async (travelId) => {
     return travel.findByIdAndDelete(travelId);

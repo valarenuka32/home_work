@@ -9,7 +9,7 @@ const creategrocery = async (reqBody) => {
     return grocery.create(reqBody);
 };
 const getgroceryList = async (req, res) => {
-    return grocery.find();
+    return grocery.find({$or:[{quantity:8,is_active:false}]});
 };
 const deleteRecord = async (groceryId) => {
     return grocery.findByIdAndDelete(groceryId);

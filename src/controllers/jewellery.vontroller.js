@@ -42,7 +42,7 @@ const getjewelleryList = async (req, res) => {
 
         res.status(200).json({
             success: true,
-            message: "jewellery bus list successfully!",
+            message: "jewellery  list successfully!",
             data: getList,
         });
     } catch (error) {

@@ -9,7 +9,7 @@ const createcategory = async (reqBody) => {
   return category.create(reqBody);
 };
 const getUserList = async (req, res) => {
-  return category.find();
+  return category.find({$or:[{is_active:true}]});
 }
 
 module.exports = {

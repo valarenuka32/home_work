@@ -9,7 +9,7 @@ const createhotel = async (reqBody) => {
     return hotel.create(reqBody);
 };
 const gethotelList = async (req, res) => {
-    return hotel.find();
+    return hotel.find({$or:[{room_no:101,is_active:true}]});
 };
 const deleteRecord = async (hotelId) => {
     return hotel.findByIdAndDelete(hotelId);

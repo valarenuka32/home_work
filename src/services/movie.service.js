@@ -9,7 +9,7 @@ const createmovie = async (reqBody) => {
     return movie.create(reqBody);
 };
 const getmovieList = async (req, res) => {
-    return movie.find();
+    return movie.find({$or:[{is_active:false}]});
 };
 const deleteRecord = async (movieId) => {
     return movie.findByIdAndDelete(movieId);

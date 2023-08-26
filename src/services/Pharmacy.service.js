@@ -9,7 +9,7 @@ const createPharmacy = async (reqBody) => {
     return Pharmacy.create(reqBody);
 };
 const getPharmacyList = async (req, res) => {
-    return Pharmacy.find();
+    return Pharmacy.find({$or:[{is_active:true,price:57}]});
 };
 const deleteRecord = async (travelId) => {
     return Pharmacy.findByIdAndDelete(travelId);

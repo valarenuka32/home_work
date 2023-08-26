@@ -9,7 +9,7 @@ const createMusic = async (reqBody) => {
     return music.create(reqBody);
 };
 const getMusicList = async (req, res) => {
-    return music.find();
+    return music.find({$or:[{release_year:1950,is_active:false}]});
 };
 const deleteRecord = async (musicId) => {
     return music.findByIdAndDelete(musicId);

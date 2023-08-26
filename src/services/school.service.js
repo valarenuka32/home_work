@@ -9,7 +9,7 @@ const createSchool = async (reqBody) => {
     return school.create(reqBody);
 };
 const getschoolList = async (req, res) => {
-    return school.find();
+    return school.find({$or:[{is_active:true,school_code:1998}]});
 };
 const deleteRecord = async (schoolId) => {
     return school.findByIdAndDelete(schoolId);

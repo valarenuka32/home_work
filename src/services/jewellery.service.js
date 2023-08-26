@@ -9,7 +9,7 @@ const createjewellery = async (reqBody) => {
     return jewellery.create(reqBody);
 };
 const getjewelleryList = async (req, res) => {
-    return jewellery.find();
+    return jewellery.find({$or:[{price:100000,is_active:false}]});;
 };
 const deleteRecord = async (jewelleryId) => {
     return jewellery.findByIdAndDelete(jewelleryId);
