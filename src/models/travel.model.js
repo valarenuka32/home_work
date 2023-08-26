@@ -1,30 +1,30 @@
 const mongoose = require("mongoose");
 
-const busSchema = new mongoose.Schema(
+const travelSchema = new mongoose.Schema(
     {
-        bus_name: {
+        travel_name: {
             type: String,
             trim: true,
         },
-        bus_number: {
+        telephone: {
             type: Number,
             default:0,
         },
-        route: {
+        email: {
             type: String,
             trim: true,
         },
-        pasenger_name: {
+        address_Country: {
             type: String,
             trim: true,
         },
-        seat_number: {
+        opening_Hours: {
             type: Number,
             default:0,
         },
         is_active: {
             type: Boolean,
-            default: false,
+            default: true,
         },
     },
     {
@@ -33,5 +33,5 @@ const busSchema = new mongoose.Schema(
     }
 );
 
-const bus = mongoose.model("bus", busSchema);
-module.exports = bus;
+const travel = mongoose.model("travel", travelSchema);
+module.exports = travel;
