@@ -7,23 +7,23 @@ const router = express.Router();
 
 // create grocery
 router.post(
-      "/create-grocery",
-      validate(groceryValidaton.creategrocery),
-      groceryControler.creategrocery
+    "/create-grocery",
+    validate(groceryValidaton.creategrocery),
+    groceryControler.creategrocery
 );
 
 // get grocery list
 router.get(
-      "/grocery-list",
-      // validate(groceryValidaton.getgroceryList),
-      groceryControler.getgroceryList
+    "/grocery-list",
+    // validate(groceryValidaton.getgroceryList),
+    groceryControler.getgroceryList
 );
 
 // grocery list delete
 router.delete(
-      "/delete-grocery/:groceryId",
-      // validate(groceryValidaton.deleteRecord),
-      groceryControler.deleteRecord
+    "/delete-grocery/:groceryId",
+    // validate(groceryValidaton.deleteRecord),
+    groceryControler.deleteRecord
 );
 
 module.exports = router;

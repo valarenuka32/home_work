@@ -12,11 +12,11 @@ const grocerySchema = new mongoose.Schema(
         },
         price: {
             type: Number,
-            default:0,
+            default: 0,
         },
         quantity: {
             type: Number,
-            default:0,
+            default: 0,
         },
         is_active: {
             type: Boolean,

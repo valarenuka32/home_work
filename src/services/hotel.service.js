@@ -17,7 +17,7 @@ const deleteRecord = async (hotelId) => {
 
 const getCategoryById = async (hotelId) => {
     return hotel.findById(hotelId);
-  };
+};
 
 module.exports = {
     createhotel,

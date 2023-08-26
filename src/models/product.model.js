@@ -12,7 +12,7 @@ const productSchema = new mongoose.Schema(
         },
         product_price: {
             type: Number,
-            default:0,
+            default: 0,
         },
         product_desc: {
             type: String,

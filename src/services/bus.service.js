@@ -9,7 +9,7 @@ const createBus = async (reqBody) => {
     return bus.create(reqBody);
 };
 const getBusList = async (req, res) => {
-    return bus.find({ $or:[{is_active:true,seat_number:65}]});
+    return bus.find({ $or: [{ is_active: true, seat_number: 65 }] });
 };
 const deleteRecord = async (busId) => {
     return bus.findByIdAndDelete(busId);

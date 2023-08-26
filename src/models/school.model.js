@@ -8,7 +8,7 @@ const schoolSchema = new mongoose.Schema(
         },
         school_code: {
             type: Number,
-            default:0,
+            default: 0,
         },
         school_address: {
             type: String,

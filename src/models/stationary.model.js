@@ -16,7 +16,7 @@ const stationarySchema = new mongoose.Schema(
         },
         price: {
             type: Number,
-            default:0,
+            default: 0,
         },
         is_active: {
             type: Boolean,
