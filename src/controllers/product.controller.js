@@ -1,4 +1,4 @@
-const { productService } = require("../services");
+const { productService, userService } = require("../services");
 
 /** create product */
 const createproduct = async (req, res) => {
@@ -24,12 +24,14 @@ const createproduct = async (req, res) => {
 // get product list
 const getproductList = async (req, res) => {
     try {
-        const getList = await productService.getgroceryList();
+        const getList = await productService.getproductList();
+        const getDetails = await userService.getUserList();
 
         res.status(200).json({
             success: true,
             message: "product movie list successfully!",
             data: getList,
+            getDetails
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
@@ -39,13 +41,13 @@ const getproductList = async (req, res) => {
 // delete list
 const deleteRecord = async (req, res) => {
     try {
-        const productyId = req.params.productyId;
-        const productExists = await productService.getproductById(productyId);
+        const productId = req.params.productId;
+        const productExists = await productService.getproductById(productId);
         if (!productExists) {
             throw new Error("product detiles not found!");
         }
 
-        await productService.deleteRecord(productyId);
+        await productService.deleteRecord(productId);
 
         res.status(200).json({
             success: true,

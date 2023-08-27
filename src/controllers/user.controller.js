@@ -1,4 +1,5 @@
 const { userService, categoryService } = require("../services");
+
 /** create user */
 const createUser = async (req, res) => {
   try {
@@ -23,6 +24,7 @@ const createUser = async (req, res) => {
     res.status(400).json({ success: false, message: error.message });
   }
 };
+
 // Get user list
 const getUserList = async (req, res) => {
   try {
