@@ -18,4 +18,11 @@ router.get(
     userController.getUserList
 );
 
+// user list delete
+router.delete(
+    "/delete-user/:userId",
+    // validate(userValidation.deleteRecord),
+    userController.deleteRecord
+);
+
 module.exports = router;

@@ -11,8 +11,19 @@ const createUser = async (reqBody) => {
 
 const getUserList = async (req, res) => {
   return User.find();
-}
+};
+
+const deleteRecord = async (userId) => {
+  return User.findByIdAndDelete(userId);
+};
+
+const getuserById = async (userId) => {
+  return User.findById(userId);
+};
+
 module.exports = {
   createUser,
-  getUserList
+  getUserList,
+  deleteRecord,
+  getuserById
 };

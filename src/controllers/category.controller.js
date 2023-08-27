@@ -1,6 +1,6 @@
-const { categoryService } = require("../services");
+const { categoryService,userService } = require("../services");
 
-/** create user */
+/** create category */
 const createcategory = async (req, res) => {
     try {
         const reqBody = req.body;
@@ -25,32 +25,48 @@ const createcategory = async (req, res) => {
     }
 };
 
-// get user list
+// get category list
 const getCategoryList = async (req, res) => {
     try {
-        const { search, ...options } = req.query;
-        let filter = {};
-
-        // if (search) {
-        //     filter.$or = [
-        //         { first_name: { $regex: search, $options: "i" } },
-        //         { last_name: { $regex: search, $options: "i" } },
-        //     ];
-        // }
-
-        const getList = await userService.getCategoryList(filter, options);
+        const getList = await categoryService.getCategoryList();
+        const getuser = await userService.getUserList();
 
         res.status(200).json({
             success: true,
-            message: "Get user list successfully!",
+            message: "Get category list successfully!",
             data: getList,
+            getuser
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
     }
 };
+// delete category
+const deleteRecord = async (req, res) => {
+    try {
+        const categoryId = req.params.categoryId;
+        const categoryExists = await categoryService.getCategoryById(categoryId);
+        if (!categoryExists) {
+            throw new Error("category detiles not found!");
+        }
+
+        await categoryService.deleteRecord(categoryId);
+
+        res.status(200).json({
+            success: true,
+            message: "category detiles delete successfully!",
+        });
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
+
 
 module.exports = {
     createcategory,
-    getCategoryList
+    getCategoryList,
+    deleteRecord
 };

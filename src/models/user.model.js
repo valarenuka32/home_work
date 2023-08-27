@@ -15,11 +15,12 @@ const userSchema = new mongoose.Schema(
             trim: true,
         },
         password: {
-            type: String,
+            type: Number,
+            default:0,
         },
         is_active: {
             type: Boolean,
-            default: true,
+            default: false,
         },
     },
     {

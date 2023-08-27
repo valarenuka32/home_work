@@ -1,18 +1,28 @@
 const { category } = require("../models");
 
 /**
- * Create user
+ * Create category
  * @param {object} reqBody
  * @returns {Promise<User>}
  */
 const createcategory = async (reqBody) => {
   return category.create(reqBody);
 };
-const getUserList = async (req, res) => {
+const getCategoryList = async (req, res) => {
   return category.find({$or:[{is_active:true}]});
-}
+};
+const deleteRecord = async (categoryId) => {
+  return category.findByIdAndDelete(categoryId);
+};
+
+const getCategoryById = async (categoryId) => {
+  return category.findById(categoryId);
+};
+
 
 module.exports = {
   createcategory,
-  getUserList
+  getCategoryList,
+  deleteRecord,
+  getCategoryById
 };
