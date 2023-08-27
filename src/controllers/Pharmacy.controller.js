@@ -28,17 +28,7 @@ const createPharmacy = async (req, res) => {
 // get Pharmacy list
 const getPharmacyList = async (req, res) => {
     try {
-        const { search, ...options } = req.query;
-        let filter = {};
-
-        // if (search) {
-        //     filter.$or = [
-        //         { first_name: { $regex: search, $options: "i" } },
-        //         { last_name: { $regex: search, $options: "i" } },
-        //     ];
-        // }
-
-        const getList = await PharmacyService.getPharmacyList(filter, options);
+        const getList = await PharmacyService.getPharmacyList();
 
         res.status(200).json({
             success: true,

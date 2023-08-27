@@ -1,6 +1,6 @@
 const { busService } = require("../services");
 
-/** create user */
+/** create bus */
 const createBus = async (req, res) => {
     try {
         const reqBody = req.body;
@@ -28,17 +28,7 @@ const createBus = async (req, res) => {
 // get bus list
 const getBusList = async (req, res) => {
     try {
-        const { search, ...options } = req.query;
-        let filter = {};
-
-        if (search) {
-            filter.$or = [
-                { first_name: { $regex: search, $options: "i" } },
-                { last_name: { $regex: search, $options: "i" } },
-            ];
-        }
-
-        const getList = await busService.getBusList(filter, options);
+        const getList = await busService.getBusList();
 
         res.status(200).json({
             success: true,

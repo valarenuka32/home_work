@@ -28,17 +28,7 @@ const createmovie = async (req, res) => {
 // get movie list
 const getmovieList = async (req, res) => {
     try {
-        const { search, ...options } = req.query;
-        let filter = {};
-
-        // if (search) {
-        //     filter.$or = [
-        //         { first_name: { $regex: search, $options: "i" } },
-        //         { last_name: { $regex: search, $options: "i" } },
-        //     ];
-        // }
-
-        const getList = await movieService.getmovieList(filter, options);
+        const getList = await movieService.getmovieList();
 
         res.status(200).json({
             success: true,

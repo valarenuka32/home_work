@@ -28,17 +28,7 @@ const creategrocery = async (req, res) => {
 // get grocery list
 const getgroceryList = async (req, res) => {
     try {
-        const { search, ...options } = req.query;
-        let filter = {};
-
-        // if (search) {
-        //     filter.$or = [
-        //         { first_name: { $regex: search, $options: "i" } },
-        //         { last_name: { $regex: search, $options: "i" } },
-        //     ];
-        // }
-
-        const getList = await groceryService.getgroceryList(filter, options);
+        const getList = await groceryService.getgroceryList();
 
         res.status(200).json({
             success: true,

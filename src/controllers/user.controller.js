@@ -28,6 +28,7 @@ const getUserList = async (req, res) => {
   try {
     const getDetails = await userService.getUserList();
     const getCategory = await categoryService.getCategoryList();
+
     res.status(200).json({
       success: true,
       message: "User details get successfully!",
@@ -42,23 +43,23 @@ const getUserList = async (req, res) => {
 // delete list
 const deleteRecord = async (req, res) => {
   try {
-      const userId = req.params.userId;
-      const userExists = await musicService.getuserById(userId);
-      if (!userExists) {
-          throw new Error("user detiles not found!");
-      }
+    const userId = req.params.userId;
+    const userExists = await musicService.getuserById(userId);
+    if (!userExists) {
+      throw new Error("user detiles not found!");
+    }
 
-      await musicService.deleteRecord(userId);
+    await musicService.deleteRecord(userId);
 
-      res.status(200).json({
-          success: true,
-          message: "user detiles delete successfully!",
-      });
+    res.status(200).json({
+      success: true,
+      message: "user detiles delete successfully!",
+    });
   } catch (error) {
-      res.status(400).json({
-          success: false,
-          message: error.message,
-      });
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
 module.exports = {

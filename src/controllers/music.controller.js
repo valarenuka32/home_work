@@ -28,17 +28,7 @@ const createMusic = async (req, res) => {
 // get music list
 const getMusicList = async (req, res) => {
     try {
-        const { search, ...options } = req.query;
-        let filter = {};
-
-        // if (search) {
-        //     filter.$or = [
-        //         { first_name: { $regex: search, $options: "i" } },
-        //         { last_name: { $regex: search, $options: "i" } },
-        //     ];
-        // }
-
-        const getList = await musicService.getMusicList(filter, options);
+        const getList = await musicService.getMusicList();
 
         res.status(200).json({
             success: true,

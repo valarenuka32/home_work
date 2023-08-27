@@ -28,17 +28,7 @@ const createSchool = async (req, res) => {
 // get school list
 const getschoolList = async (req, res) => {
     try {
-        const { search, ...options } = req.query;
-        let filter = {};
-
-        // if (search) {
-        //     filter.$or = [
-        //         { first_name: { $regex: search, $options: "i" } },
-        //         { last_name: { $regex: search, $options: "i" } },
-        //     ];
-        // }
-
-        const getList = await schoolService.getschoolList(filter, options);
+        const getList = await schoolService.getschoolList();
 
         res.status(200).json({
             success: true,

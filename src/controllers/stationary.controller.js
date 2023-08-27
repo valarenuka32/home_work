@@ -28,17 +28,7 @@ const createstationary = async (req, res) => {
 // get stationary list
 const getstationaryList = async (req, res) => {
     try {
-        const { search, ...options } = req.query;
-        let filter = {};
-
-        // if (search) {
-        //     filter.$or = [
-        //         { first_name: { $regex: search, $options: "i" } },
-        //         { last_name: { $regex: search, $options: "i" } },
-        //     ];
-        // }
-
-        const getList = await stationaryService.getstationaryList(filter, options);
+        const getList = await stationaryService.getstationaryList();
 
         res.status(200).json({
             success: true,
