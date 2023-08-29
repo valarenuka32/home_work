@@ -5,14 +5,14 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
-// hotel detiles create
+// stationary detiles create
 router.post(
       "/create-stationary",
       validate(stationaryValidation.createstationary),
       stationaryControler.createstationary
 );
 
-// get hotel list
+// get stationary list
 router.get(
       "/list",
       // validate(stationaryValidation.getstationaryList),

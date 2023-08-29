@@ -12,14 +12,14 @@ router.post(
     movieControler.createmovie
 );
 
-// get bus list
+// get movie list
 router.get(
     "/movie-list",
     // validate(movieValidaton.getmovieList),
     movieControler.getmovieList
 );
 
-// bus list delete
+// movie list delete
 router.delete(
     "/delete-movie/:movieId",
     // validate(movieValidaton.deleteRecord),

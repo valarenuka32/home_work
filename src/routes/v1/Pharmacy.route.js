@@ -5,21 +5,21 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
-// create category
+// create Pharmacy
 router.post(
     "/create-Pharmacy",
     validate(PharmacyValidaton.createPharmacy),
     PharmacyControler.createPharmacy
 );
 
-// get bus list
+// get Pharmacy list
 router.get(
     "/Pharmacy-list",
     // validate(PharmacyValidaton.getPharmacyList),
     PharmacyControler.getPharmacyList
 );
 
-// bus list delete
+// Pharmacy list delete
 router.delete(
     "/delete-Pharmacy/:PharmacyId",
     // validate(PharmacyValidaton.deleteRecord),

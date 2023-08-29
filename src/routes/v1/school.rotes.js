@@ -5,21 +5,21 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
-// create category
+// create school
 router.post(
       "/create-school",
       validate(schoolValidaton.createSchool),
       schoolControler.createSchool
 );
 
-// get bus list
+// get school list
 router.get(
       "/school-list",
       // validate(schoolValidaton.getBusList),
       schoolControler.getschoolList
 );
 
-// bus list delete
+// school list delete
 router.delete(
       "/delete-school/:schoolId",
       // validate(schoolValidaton.deleteRecord),
