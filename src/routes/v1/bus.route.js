@@ -26,4 +26,9 @@ router.delete(
       busControler.deleteRecord
 );
 
+// update
+router.put(
+      "/update/:busId",
+      busControler.updatebus
+);
 module.exports = router;

@@ -39,7 +39,7 @@ const gethotelList = async (req, res) => {
 const deleteRecord = async (req, res) => {
     try {
         const hotelId = req.params.hotelId;
-        const hotelExists = await hotelService.getCategoryById(hotelId);
+        const hotelExists = await hotelService.gethotelById(hotelId);
         if (!hotelExists) {
             throw new Error("hotel detiles not found!");
         }
@@ -57,8 +57,33 @@ const deleteRecord = async (req, res) => {
         });
     }
 };
+
+// update detiles
+const updatehoteldetiles = async (req, res) => {
+    try {
+        const hotelId = req.params.hotelId;
+
+        const hotelExists = await hotelService.gethotelById(hotelId);
+        if (!hotelExists) {
+            throw new Error("hotel not found!");
+        }
+
+        await hotelService.updateDetails(hotelId, req.body);
+
+        res.status(200).json({
+            success: true,
+            message: "hotel details update successfully!",
+        });
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
 module.exports = {
     createhotel,
     gethotelList,
-    deleteRecord
+    deleteRecord,
+    updatehoteldetiles
 };

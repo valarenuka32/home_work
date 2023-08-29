@@ -19,9 +19,13 @@ const getgroceryById = async (groceryId) => {
     return grocery.findById(groceryId);
 };
 
+const updateDetails = async (groceryId, updateBody) => {
+    return grocery.findByIdAndUpdate(groceryId, { $set: updateBody });
+};
 module.exports = {
     creategrocery,
     getgroceryList,
     deleteRecord,
-    getgroceryById
+    getgroceryById,
+    updateDetails
 };

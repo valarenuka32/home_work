@@ -1,7 +1,7 @@
 const { bus } = require("../models");
 
 /**
- * Create hotel
+ * Create bus
  * @param {object} reqBody
  * @returns {Promise<User>}
  */
@@ -14,14 +14,16 @@ const getBusList = async (req, res) => {
 const deleteRecord = async (busId) => {
     return bus.findByIdAndDelete(busId);
 };
-
 const getbusById = async (busId) => {
     return bus.findById(busId);
 };
-
+const updateDetails = async (busId, updateBody) => {
+    return bus.findByIdAndUpdate(busId, { $set: updateBody });
+};
 module.exports = {
     createBus,
     getBusList,
     deleteRecord,
-    getbusById
+    getbusById,
+    updateDetails
 };

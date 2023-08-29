@@ -1,4 +1,4 @@
-const { categoryService,userService } = require("../services");
+const { categoryService, userService } = require("../services");
 
 /** create category */
 const createcategory = async (req, res) => {
@@ -63,10 +63,33 @@ const deleteRecord = async (req, res) => {
         });
     }
 };
+// update detiles
+const updateCategory = async (req, res) => {
+    try {
+        const categoryId = req.params.categoryId;
 
+        const categoryExists = await categoryService.getCategoryById(categoryId);
+        if (!categoryExists) {
+            throw new Error("category not found!");
+        }
+
+        await categoryService.updateDetails(categoryId, req.body);
+
+        res.status(200).json({
+            success: true,
+            message: "category details update successfully!",
+        });
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
 
 module.exports = {
     createcategory,
     getCategoryList,
-    deleteRecord
+    deleteRecord,
+    updateCategory
 };

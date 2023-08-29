@@ -11,7 +11,6 @@ router.post(
       validate(hotelValidation.createhotel),
       hotelControler.createhotel
 );
-
 // get hotel list
 router.get(
       "/list",
@@ -24,4 +23,11 @@ router.delete(
       // validate(hotelValidation.deleteRecord),
       hotelControler.deleteRecord
 );
+
+// update
+router.put(
+      "/update/:hotelId",
+      hotelControler.updatehoteldetiles
+);
+
 module.exports = router;

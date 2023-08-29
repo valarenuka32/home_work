@@ -25,5 +25,10 @@ router.delete(
       // validate(categoryValidaton.deleteRecord),
       categoryControler.deleteRecord
 );
+// update
+router.put(
+      "/update/:categoryId",
+      categoryControler.updateCategory
+);
 
 module.exports = router;
