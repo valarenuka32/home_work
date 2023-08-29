@@ -5,21 +5,21 @@ const validate = require("../../middlewares/validate");
 
 const router = express.Router();
 
-// create category
+// create travel
 router.post(
     "/create-travel",
     validate(travelValidaton.createTravel),
     travelControler.createTravel
 );
 
-// get bus list
+// get travel list
 router.get(
     "/travel-list",
     // validate(travelValidaton.getTravelList),
     travelControler.getTravelList
 );
 
-// bus list delete
+// travel list delete
 router.delete(
     "/delete-travel/:travelId",
     // validate(travelValidaton.deleteRecord),
