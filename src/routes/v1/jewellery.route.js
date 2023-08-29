@@ -26,4 +26,9 @@ router.delete(
     jewelleryControler.deleteRecord
 );
 
+router.put(
+    "/update/:jewelleryId",
+    hotelControler.updatejewellery
+);
+
 module.exports = router;

@@ -19,9 +19,14 @@ const getjewelleryById = async (jewelleryId) => {
     return jewellery.findById(jewelleryId);
 };
 
+const updateDetails = async (jewelleryId, updateBody) => {
+    return jewellery.findByIdAndUpdate(jewelleryId, { $set: updateBody });
+};
+
 module.exports = {
     createjewellery,
     getjewelleryList,
     deleteRecord,
-    getjewelleryById
+    getjewelleryById,
+    updateDetails
 };
