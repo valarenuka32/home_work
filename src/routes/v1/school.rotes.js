@@ -25,5 +25,11 @@ router.delete(
       // validate(schoolValidaton.deleteRecord),
       schoolControler.deleteRecord
 );
+// update
+router.put(
+      "/update/:schoolId",
+      schoolControler.updateSchool
+  );
+
 
 module.exports = router;

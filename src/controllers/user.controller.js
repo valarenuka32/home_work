@@ -46,12 +46,12 @@ const getUserList = async (req, res) => {
 const deleteRecord = async (req, res) => {
   try {
     const userId = req.params.userId;
-    const userExists = await musicService.getuserById(userId);
+    const userExists = await userService.getuserById(userId);
     if (!userExists) {
       throw new Error("user detiles not found!");
     }
 
-    await musicService.deleteRecord(userId);
+    await userService.deleteRecord(userId);
 
     res.status(200).json({
       success: true,
@@ -64,9 +64,34 @@ const deleteRecord = async (req, res) => {
     });
   }
 };
+
+// update
+const updateUser = async (req, res) => {
+  try {
+      const userId = req.params.userId;
+
+      const userExists = await userService.getuserById(userId);
+      if (!userExists) {
+          throw new Error("user not found");
+      }
+
+      await userService.updateDetails(userId, req.body);
+
+      res.status(200).json({
+          success: true,
+          message: "user details update successfully!"
+      })
+  } catch (error) {
+      res.status(400).json({
+          success: false,
+          message: error.message,
+      });
+  }
+};
 module.exports = {
   createUser,
   getUserList,
-  deleteRecord
+  deleteRecord,
+  updateUser
 }
 

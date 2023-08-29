@@ -26,4 +26,10 @@ router.delete(
     PharmacyControler.deleteRecord
 );
 
+// update
+router.put(
+    "/update/:PharmacyId",
+    PharmacyControler.updatePharmacy
+);
+
 module.exports = router;

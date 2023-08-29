@@ -63,9 +63,33 @@ const deleteRecord = async (req, res) => {
     }
 };
 
+// update
+const updateStationary = async (req, res) => {
+    try {
+        const stationaryId = req.params.stationaryId;
+
+        const stationaryExists = await stationaryService.getstationaryById(stationaryId);
+        if (!stationaryExists) {
+            throw new Error("stationary not found");
+        }
+
+        await stationaryService.updateDetails(stationaryId, req.body);
+
+        res.status(200).json({
+            success: true,
+            message: "stationary details update successfully!"
+        })
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
 module.exports = {
     createstationary,
     getstationaryList,
-    deleteRecord
+    deleteRecord,
+    updateStationary
 };
 

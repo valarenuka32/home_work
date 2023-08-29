@@ -25,4 +25,10 @@ router.delete(
     userController.deleteRecord
 );
 
+// update
+router.put(
+    "/update/:userId",
+    userController.updateUser
+);
+
 module.exports = router;

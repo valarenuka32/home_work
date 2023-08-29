@@ -63,9 +63,34 @@ const deleteRecord = async (req, res) => {
     }
 };
 
+// update
+const updateTravel = async (req, res) => {
+    try {
+        const travelId = req.params.travelId;
+
+        const travelExists = await travelService.gettravelById(travelId);
+        if (!travelExists) {
+            throw new Error("travel not found");
+        }
+
+        await travelService.updateDetails(travelId, req.body);
+
+        res.status(200).json({
+            success: true,
+            message: "travel details update successfully!"
+        })
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
+
 module.exports = {
     createTravel,
     getTravelList,
-    deleteRecord
+    deleteRecord,
+    updateTravel
 };
 

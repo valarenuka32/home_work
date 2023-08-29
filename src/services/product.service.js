@@ -19,10 +19,15 @@ const getproductById = async (productId) => {
     return product.findById(productId);
 };
 
+const updateDetails = async (productId, updateBody) => {
+    return product.findByIdAndUpdate(productId, { $set: updateBody })
+};
+
 
 module.exports = {
     createproduct,
     getproductList,
     deleteRecord,
-    getproductById
+    getproductById,
+    updateDetails
 };

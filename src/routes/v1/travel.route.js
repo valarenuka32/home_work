@@ -26,4 +26,10 @@ router.delete(
     travelControler.deleteRecord
 );
 
+// update
+router.put(
+    "/update/:travelId",
+    travelControler.updateTravel
+);
+
 module.exports = router;

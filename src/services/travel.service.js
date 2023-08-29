@@ -1,7 +1,7 @@
 const { travel } = require("../models");
 
 /**
- * Create hotel
+ * Create travel
  * @param {object} reqBody
  * @returns {Promise<User>}
  */
@@ -19,9 +19,14 @@ const gettravelById = async (travelId) => {
     return travel.findById(travelId);
 };
 
+const updateDetails = async (travelId, updateBody) => {
+    return travel.findByIdAndUpdate(travelId, { $set: updateBody })
+};
+
 module.exports = {
     createTravel,
     getTravelList,
     deleteRecord,
-    gettravelById
+    gettravelById,
+    updateDetails
 };

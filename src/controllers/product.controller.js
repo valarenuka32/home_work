@@ -61,9 +61,34 @@ const deleteRecord = async (req, res) => {
     }
 };
 
+// update
+const updateProduct = async (req, res) => {
+    try {
+        const productId = req.params.productId;
+
+        const productExists = await productService.getproductById(productId);
+        if (!productExists) {
+            throw new Error("product not found");
+        }
+
+        await productService.updateDetails(productId, req.body);
+
+        res.status(200).json({
+            success: true,
+            message: "product details update successfully!"
+        })
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
+
 module.exports = {
     createproduct,
     getproductList,
-    deleteRecord
+    deleteRecord,
+    updateProduct
 };
 

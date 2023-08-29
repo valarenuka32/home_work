@@ -24,4 +24,10 @@ router.delete(
       // validate(stationaryValidation.deleteRecord),
       stationaryControler.deleteRecord
 );
+
+// update
+router.put(
+      "/update/:stationaryId",
+      stationaryControler.updateStationary
+  );
 module.exports = router;

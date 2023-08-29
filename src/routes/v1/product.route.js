@@ -25,5 +25,10 @@ router.delete(
     // validate(productValidaton.deleteRecord),
     productControler.deleteRecord
 );
+// update
+router.put(
+    "/update/:productId",
+    productControler.updateProduct
+);
 
 module.exports = router;

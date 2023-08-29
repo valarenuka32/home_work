@@ -19,9 +19,14 @@ const getstationaryById = async (stationaryId) => {
     return stationary.findById(stationaryId);
 };
 
+const updateDetails = async (stationaryId, updateBody) => {
+    return stationary.findByIdAndUpdate(stationaryId, { $set: updateBody })
+};
+
 module.exports = {
     createstationary,
     getstationaryList,
     deleteRecord,
-    getstationaryById
+    getstationaryById,
+    updateDetails
 };

@@ -1,7 +1,7 @@
 const { school } = require("../models");
 
 /**
- * Create hotel
+ * Create school
  * @param {object} reqBody
  * @returns {Promise<User>}
  */
@@ -19,9 +19,13 @@ const getschoolById = async (schoolId) => {
     return school.findById(schoolId);
 };
 
+const updateDetails = async (schoolId, updateBody) => {
+    return school.findByIdAndUpdate(schoolId, { $set: updateBody })
+};
 module.exports = {
     createSchool,
     getschoolList,
     deleteRecord,
-    getschoolById
+    getschoolById,
+    updateDetails
 };
