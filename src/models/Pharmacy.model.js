@@ -18,6 +18,10 @@ const PharmacySchema = new mongoose.Schema(
             type: Number,
             default: 0,
         },
+        product: {
+            type: mongoose.Types.ObjectId,
+            ref: "product",
+        },
         is_active: {
             type: Boolean,
             default: false,

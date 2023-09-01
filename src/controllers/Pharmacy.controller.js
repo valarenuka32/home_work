@@ -1,4 +1,4 @@
-const { PharmacyService } = require("../services");
+const { PharmacyService, productService } = require("../services");
 
 /** create Pharmacy */
 const createPharmacy = async (req, res) => {
@@ -29,11 +29,12 @@ const createPharmacy = async (req, res) => {
 const getPharmacyList = async (req, res) => {
     try {
         const getList = await PharmacyService.getPharmacyList();
+        const getdetiles = await productService.getproductList();
 
         res.status(200).json({
             success: true,
             message: "Get Pharmacy list successfully!",
-            data: getList,
+            data: getList, getdetiles
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });

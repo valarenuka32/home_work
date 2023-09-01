@@ -13,7 +13,7 @@ const categorySchema = new mongoose.Schema(
         product: {
             type: mongoose.Types.ObjectId,
             ref: "product",
-          },
+        },
         is_active: {
             type: Boolean,
             default: false,
