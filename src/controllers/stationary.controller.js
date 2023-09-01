@@ -5,10 +5,6 @@ const createstationary = async (req, res) => {
     try {
         const reqBody = req.body;
         console.log(reqBody);
-        // const categoryExists = await categoryService.getUserByEmail(reqBody.email);
-        // if (categoryExists) {
-        //     throw new Error("User already created by this email!");
-        // }
 
         const stationary = await stationaryService.createstationary(reqBody);
         if (!stationary) {
