@@ -1,4 +1,4 @@
-const { stationaryService } = require("../services");
+const { stationaryService, categoryService } = require("../services");
 
 /** create stationary */
 const createstationary = async (req, res) => {
@@ -29,11 +29,12 @@ const createstationary = async (req, res) => {
 const getstationaryList = async (req, res) => {
     try {
         const getList = await stationaryService.getstationaryList();
+        const getDetails = await categoryService.getCategoryList();
 
         res.status(200).json({
             success: true,
             message: "Get stationary list successfully!",
-            data: getList,
+            data: getList, getDetails
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });

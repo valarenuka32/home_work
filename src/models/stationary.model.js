@@ -18,6 +18,10 @@ const stationarySchema = new mongoose.Schema(
             type: Number,
             default: 0,
         },
+        category: {
+            type: mongoose.Types.ObjectId,
+            ref: "category",
+        },
         is_active: {
             type: Boolean,
             default: true,
