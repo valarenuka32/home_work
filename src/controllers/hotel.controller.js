@@ -1,4 +1,4 @@
-const { hotelService } = require("../services");
+const { hotelService, categoryService } = require("../services");
 
 // create hotel detiles
 const createhotel = async (req, res) => {
@@ -24,11 +24,13 @@ const createhotel = async (req, res) => {
 const gethotelList = async (req, res) => {
     try {
         const getList = await hotelService.gethotelList();
+        const getDetails = await categoryService.getCategoryList();
 
         res.status(200).json({
             success: true,
             message: "Get hotel list successfully!",
             data: getList,
+            getDetails
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });

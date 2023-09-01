@@ -1,14 +1,10 @@
-const { jewelleryService } = require("../services");
+const { jewelleryService, productService } = require("../services");
 
 /** create jewellery */
 const createjewellery = async (req, res) => {
     try {
         const reqBody = req.body;
         console.log(reqBody);
-        // const categoryExists = await categoryService.getUserByEmail(reqBody.email);
-        // if (categoryExists) {
-        //     throw new Error("User already created by this email!");
-        // }
 
         const jewellery = await jewelleryService.createjewellery(reqBody);
         if (!jewellery) {
@@ -29,11 +25,13 @@ const createjewellery = async (req, res) => {
 const getjewelleryList = async (req, res) => {
     try {
         const getList = await jewelleryService.getjewelleryList();
+        const getdetiles = await productService.getproductList();
 
         res.status(200).json({
             success: true,
             message: "jewellery  list successfully!",
             data: getList,
+            getdetiles
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });

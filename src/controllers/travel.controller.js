@@ -1,14 +1,10 @@
-const { travelService } = require("../services");
+const { travelService, busService } = require("../services");
 
 /** create travel */
 const createTravel = async (req, res) => {
     try {
         const reqBody = req.body;
         console.log(reqBody);
-        // const categoryExists = await categoryService.getUserByEmail(reqBody.email);
-        // if (categoryExists) {
-        //     throw new Error("User already created by this email!");
-        // }
 
         const travel = await travelService.createTravel(reqBody);
         if (!travel) {
@@ -29,11 +25,13 @@ const createTravel = async (req, res) => {
 const getTravelList = async (req, res) => {
     try {
         const getList = await travelService.getTravelList();
+        const getDetails = await busService.getBusList();
 
         res.status(200).json({
             success: true,
             message: "Get travel list successfully!",
             data: getList,
+            getDetails
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });

@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema(
         },
         password: {
             type: Number,
-            default:0,
+            default: 0,
         },
         is_active: {
             type: Boolean,

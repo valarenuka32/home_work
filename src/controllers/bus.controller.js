@@ -1,4 +1,4 @@
-const { busService } = require("../services");
+const { busService,userService } = require("../services");
 
 /** create bus */
 const createBus = async (req, res) => {
@@ -29,11 +29,13 @@ const createBus = async (req, res) => {
 const getBusList = async (req, res) => {
     try {
         const getList = await busService.getBusList();
+        const getDetails = await userService.getUserList();
 
         res.status(200).json({
             success: true,
             message: "Get bus list successfully!",
             data: getList,
+            getDetails
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });

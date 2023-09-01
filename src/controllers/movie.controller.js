@@ -1,4 +1,4 @@
-const { movieService } = require("../services");
+const { movieService,musicService } = require("../services");
 
 /** create movie */
 const createmovie = async (req, res) => {
@@ -29,11 +29,13 @@ const createmovie = async (req, res) => {
 const getmovieList = async (req, res) => {
     try {
         const getList = await movieService.getmovieList();
+        const getDetails = await musicService.getMusicList();
 
         res.status(200).json({
             success: true,
             message: "Get movie list successfully!",
             data: getList,
+            getDetails
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
