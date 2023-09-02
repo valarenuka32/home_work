@@ -25,7 +25,7 @@ const travelSchema = new mongoose.Schema(
         bus: {
             type: mongoose.Types.ObjectId,
             ref: "bus",
-          },
+        },
         is_active: {
             type: Boolean,
             default: true,
