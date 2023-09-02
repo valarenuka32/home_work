@@ -18,6 +18,10 @@ const productSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
+        category: {
+            type: mongoose.Types.ObjectId,
+            ref: "category",
+        },
         is_active: {
             type: Boolean,
             trim: true,
@@ -29,4 +33,5 @@ const productSchema = new mongoose.Schema(
     }
 );
 const product = mongoose.model("products", productSchema);
+
 module.exports = product;

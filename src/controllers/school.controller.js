@@ -1,4 +1,4 @@
-const { schoolService, busService } = require("../services");
+const { schoolService } = require("../services");
 
 /** create school */
 const createSchool = async (req, res) => {
@@ -29,13 +29,13 @@ const createSchool = async (req, res) => {
 const getschoolList = async (req, res) => {
     try {
         const getList = await schoolService.getschoolList();
-        const getDetails = await busService.getBusList();
+        // const getDetails = await busService.getBusList();
 
         res.status(200).json({
             success: true,
             message: "Get school list successfully!",
             data: getList,
-            getDetails
+            // getDetails
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
