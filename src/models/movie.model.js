@@ -22,6 +22,11 @@ const movieSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
+        movie_showtime:{
+           type:Date,
+           default:Date.now(),
+           trim:true
+        },
         music:{
             type: mongoose.Types.ObjectId,
             ref: "music",

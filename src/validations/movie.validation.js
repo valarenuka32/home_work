@@ -8,6 +8,7 @@ const createmovie = {
         actor_name: Joi.string().required().trim(),
         language: Joi.string().required().trim(),
         movie_type: Joi.string().required().trim(),
+        movie_showtime:Joi.number().integer().allow(),
     }),
 };
 

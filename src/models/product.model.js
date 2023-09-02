@@ -14,13 +14,13 @@ const productSchema = new mongoose.Schema(
             type: Number,
             default: 0,
         },
-        product_desc: {
-            type: String,
-            trim: true,
-        },
         category: {
             type: mongoose.Types.ObjectId,
             ref: "category",
+        },
+        product_desc: {
+            type: String,
+            trim: true,
         },
         is_active: {
             type: Boolean,
