@@ -1,5 +1,10 @@
 const express = require("express");
 const http = require("http");
+const config = require("./config/config");
+const { connectDB } = require("./db/dbconnection");
+
+// Database connection
+connectDB()
 
 const app = express();
 
