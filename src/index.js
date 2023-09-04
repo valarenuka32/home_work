@@ -1,12 +1,18 @@
 const express = require("express");
 const http = require("http");
+const bodyParser = require("body-parser");
 const config = require("./config/config");
 const { connectDB } = require("./db/dbconnection");
+
 
 // Database connection
 connectDB()
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
 
 const server = http.createServer(app);
 
