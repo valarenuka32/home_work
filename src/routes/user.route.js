@@ -13,22 +13,22 @@ router.post(
     userCantroller.createUser
 );
 
-// get user
-router.get(
-    "/list",
-    userCantroller.userList
-);
+// // get user
+// router.get(
+//     "/list",
+//     userCantroller.userList
+// );
 
-// dalete
-router.delete(
-    "/delete-user/:userId",
-    userCantroller.deleteRecord
-);
+// // dalete
+// router.delete(
+//     "/delete-user/:userId",
+//     userCantroller.deleteRecord
+// );
 
-// update
-router.put(
-    "/update/:usreId",
-    userCantroller.updateDetiles
-);
+// // update
+// router.put(
+//     "/update/:usreId",
+//     userCantroller.updateDetiles
+// );
 
 module.exports = router;
