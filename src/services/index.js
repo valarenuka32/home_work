@@ -1,1 +1,1 @@
-module.exports.userService=require("./user.services");
+module.exports.userService=require("./user.service");
