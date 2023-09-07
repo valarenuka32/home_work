@@ -6,20 +6,21 @@ const createOrderitem = async (req, res) => {
         const reqBody = req.body;
         console.log(reqBody);
 
-        const orderitemEx = await orderitemService.createOrderitem(reqBody);
-        if (!orderitemEx) {
+        const orderitem = await orderitemService.createOrderitem(reqBody);
+        if (!orderitem) {
             throw new Error("Something went wrong, please try again or later!");
         }
 
         res.status(200).json({
             success: true,
             message: "orderitem detiles create successfully!",
-            data: { orderitemEx },
+            data: { orderitem },
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
     }
 };
+
 
 // get orderitem list
 const orderitemList = async (req, res) => {
