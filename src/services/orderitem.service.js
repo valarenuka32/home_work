@@ -1,7 +1,7 @@
 const { orderitem } = require("../models");
 
 /**
- * Create order
+ * Create orderitem
  * @param {object} reqBody
  * @returns {Promise<user>}
  */
