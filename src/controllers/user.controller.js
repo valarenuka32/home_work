@@ -6,10 +6,12 @@ const createUser = async (req, res) => {
         const reqBody = req.body;
         console.log(reqBody);
 
-        const user = await userService.createUser(reqBody);
-        if (!user) {
-            throw new Error("Something went wrong, please try again or later!");
+        const userEx = await userService.getUserByName(reqBody.first_name);
+        if (userEx) {
+            throw new Error(`please add other user this ${userEx.first_name} user already created`);
         }
+
+        const book=await userService.createUser(reqBody);
 
         res.status(200).json({
             success: true,
@@ -22,70 +24,70 @@ const createUser = async (req, res) => {
 };
 
 // // get user list
-// const getUserList = async (req, res) => {
-//     try {
-//         const getList = await userService.getUserList();
+const userList = async (req, res) => {
+    try {
+        const getList = await userService.userList();
 
-//         res.status(200).json({
-//             success: true,
-//             message: "Get user list successfully!",
-//             data: getList
-//         });
-//     } catch (error) {
-//         res.status(400).json({ success: false, message: error.message });
-//     }
-// };
+        res.status(200).json({
+            success: true,
+            message: "Get user list successfully!",
+            data: getList
+        });
+    } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
+    }
+};
 
 // // delete list
-// const deleteRecord = async (req, res) => {
-//     try {
-//         const userId = req.params.userId;
-//         const userExists = await userService.getUserById(userId);
-//         if (!userExists) {
-//             throw new Error("user detiles not found!");
-//         }
+const deleteRecord = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const userExists = await userService.getUserById(userId);
+        if (!userExists) {
+            throw new Error("user detiles not found!");
+        }
 
-//         await userService.deleteRecord(userId);
+        await userService.deleteRecord(userId);
 
-//         res.status(200).json({
-//             success: true,
-//             message: "user detiles delete successfully!",
-//         });
-//     } catch (error) {
-//         res.status(400).json({
-//             success: false,
-//             message: error.message,
-//         });
-//     }
-// };
+        res.status(200).json({
+            success: true,
+            message: "user detiles delete successfully!",
+        });
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
 
 // // update detiles
-// const updateDetiles = async (req, res) => {
-//     try {
-//         const userId = req.params.userId;
+const updateDetiles = async (req, res) => {
+    try {
+        const userId = req.params.userId;
 
-//         const userExists = await userService.getUserById(userId);
-//         if (!userExists) {
-//             throw new Error("user not found!");
-//         }
+        const userExists = await userService.getUserById(userId);
+        if (!userExists) {
+            throw new Error("user not found!");
+        }
 
-//         await userService.updateDetails(userId, req.body);
+        await userService.updateDetiles(userId, req.body);
 
-//         res.status(200).json({
-//             success: true,
-//             message: "user details update successfully!",
-//         });
-//     } catch (error) {
-//         res.status(400).json({
-//             success: false,
-//             message: error.message,
-//         });
-//     }
-// };
+        res.status(200).json({
+            success: true,
+            message: "user details update successfully!",
+        });
+    } catch (error) {
+        res.status(400).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
 module.exports = {
     createUser,
-    // getUserList,
-    // deleteRecord,
-    // updateDetiles
+    userList,
+    deleteRecord,
+    updateDetiles
 };
 

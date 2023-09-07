@@ -9,7 +9,7 @@ const createUser = async (reqBody) => {
     return user.create(reqBody);
 };
 
-const getUserList = async (req, res) => {
+const userList = async (req, res) => {
     return user.find();
 };
 
@@ -25,11 +25,16 @@ const updateDetiles = async (userId, updateBody) => {
     return user.findByIdAndUpdate(userId, { $set: updateBody });
 };
 
+const getUserByName = async (first_name) => {
+    return user.findOne({ first_name });
+}
+
 
 module.exports = {
     createUser,
-    getUserList,
+    userList,
     deleteRecord,
     getUserById,
-    updateDetiles
+    updateDetiles,
+    getUserByName
 };
