@@ -11,7 +11,7 @@ const createUser = async (req, res) => {
             throw new Error(`please add other user this ${userEx.first_name} user already created`);
         }
 
-        const book=await userService.createUser(reqBody);
+        const user=await userService.createUser(reqBody);
 
         res.status(200).json({
             success: true,
@@ -42,8 +42,8 @@ const userList = async (req, res) => {
 const deleteRecord = async (req, res) => {
     try {
         const userId = req.params.userId;
-        const userExists = await userService.getUserById(userId);
-        if (!userExists) {
+        const userEx = await userService.getUserById(userId);
+        if (!userEx) {
             throw new Error("user detiles not found!");
         }
 
@@ -66,8 +66,8 @@ const updateDetiles = async (req, res) => {
     try {
         const userId = req.params.userId;
 
-        const userExists = await userService.getUserById(userId);
-        if (!userExists) {
+        const userEx = await userService.getUserById(userId);
+        if (!userEx) {
             throw new Error("user not found!");
         }
 

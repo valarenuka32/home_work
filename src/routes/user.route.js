@@ -27,7 +27,7 @@ router.delete(
 
 // // update
 router.put(
-    "/update/:usreId",
+    "/update/:userId",
     userCantroller.updateDetiles
 );
 
