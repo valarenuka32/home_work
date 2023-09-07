@@ -8,7 +8,7 @@ const router = express.Router();
 
 // create user
 router.post(
-    "/create-cart",
+    "/create-order",
     validate(orderValidation.createOrder),
     orderCantroller.createOrder
 );

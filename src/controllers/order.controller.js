@@ -40,16 +40,16 @@ const orderList = async (req, res) => {
 const deleteRecord = async (req, res) => {
     try {
         const orderId = req.params.orderId;
-        const orderEx = await orderService.getCartById(orderId);
+        const orderEx = await orderService.getOrderById(orderId);
         if (!orderEx) {
-            throw new Error("cart detiles not found!");
+            throw new Error("order detiles not found!");
         }
 
         await orderService.deleteRecord(orderId);
 
         res.status(200).json({
             success: true,
-            message: "cart detiles delete successfully!",
+            message: "order detiles delete successfully!",
         });
     } catch (error) {
         res.status(400).json({
