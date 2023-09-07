@@ -11,9 +11,9 @@ const paymentSchema = new mongoose.Schema(
             default: 0,
         },
         transaction_date: {
-            type: Date,
-            default:Date.new(),
-            trim: true,
+            type:Date,
+            default:Date.now(),
+            trim:true,
         },
     },
     {
