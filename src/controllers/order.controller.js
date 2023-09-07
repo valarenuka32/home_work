@@ -1,34 +1,34 @@
-const { cartService } = require("../services");
+const { orderService } = require("../services");
 
-/** create cart */
-const createcart = async (req, res) => {
+/** create order */
+const createOrder = async (req, res) => {
     try {
         const reqBody = req.body;
         console.log(reqBody);
 
-        const cart = await cartService.createcart(reqBody);
-        if (!cart) {
+        const order = await orderService.createOrder(reqBody);
+        if (!order) {
             throw new Error("Something went wrong, please try again or later!");
         }
 
         res.status(200).json({
             success: true,
-            message: "cart detiles create successfully!",
-            data: { cart },
+            message: "order detiles create successfully!",
+            data: { order },
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
     }
 };
 
-// get cart list
-const cartList = async (req, res) => {
+// get order list
+const orderList = async (req, res) => {
     try {
-        const getList = await cartService.cartList();
+        const getList = await orderService.orderList();
 
         res.status(200).json({
             success: true,
-            message: "Get cart list successfully!",
+            message: "Get order list successfully!",
             data: getList
         });
     } catch (error) {
@@ -39,13 +39,13 @@ const cartList = async (req, res) => {
 // delete list
 const deleteRecord = async (req, res) => {
     try {
-        const cartId = req.params.cartId;
-        const cartEx = await cartService.getCartById(cartId);
-        if (!cartEx) {
+        const orderId = req.params.orderId;
+        const orderEx = await orderService.getCartById(orderId);
+        if (!orderEx) {
             throw new Error("cart detiles not found!");
         }
 
-        await cartService.deleteRecord(cartId);
+        await orderService.deleteRecord(orderId);
 
         res.status(200).json({
             success: true,
@@ -62,18 +62,18 @@ const deleteRecord = async (req, res) => {
 // // update detiles
 const updateDetiles = async (req, res) => {
     try {
-        const cartId = req.params.cartId;
+        const orderId = req.params.orderId;
 
-        const cartEx = await cartService.getCartById(cartId);
-        if (!cartEx) {
-            throw new Error("cart not found!");
+        const orderEx = await orderService.getOrderById(orderId);
+        if (!orderEx) {
+            throw new Error("order not found!");
         }
 
-        await cartService.updateDetiles(cartId, req.body);
+        await orderService.updateDetiles(orderId, req.body);
 
         res.status(200).json({
             success: true,
-            message: "cart details update successfully!",
+            message: "order details update successfully!",
         });
     } catch (error) {
         res.status(400).json({
@@ -84,8 +84,8 @@ const updateDetiles = async (req, res) => {
 };
 
 module.exports = {
-    createcart,
-    cartList,
+    createOrder,
+    orderList,
     deleteRecord,
     updateDetiles
 };

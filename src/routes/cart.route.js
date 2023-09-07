@@ -14,21 +14,21 @@ router.post(
 );
 
 // // get user
-// router.get(
-//     "/list",
-//     cartCantroller.cartList
-// );
+router.get(
+    "/list",
+    cartCantroller.cartList
+);
 
-// // // dalete
-// router.delete(
-//     "/delete-user/:cartId",
-//     cartCantroller.deleteRecord
-// );
+ // dalete
+router.delete(
+    "/delete-cart/:cartId",
+    cartCantroller.deleteRecord
+);
 
-// // // update
-// router.put(
-//     "/update/:cartId",
-//     cartCantroller.updateDetiles
-// );
+// update
+router.put(
+    "/update/:cartId",
+    cartCantroller.updateDetiles
+);
 
 module.exports = router;

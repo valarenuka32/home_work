@@ -38,7 +38,7 @@ const userList = async (req, res) => {
     }
 };
 
-// // delete list
+// delete list
 const deleteRecord = async (req, res) => {
     try {
         const userId = req.params.userId;
