@@ -14,8 +14,20 @@ const userSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
+        Password: {
+            type: Number,
+            trim: true,
+        },
         mobile_no: {
             type: Number,
+            trim: true,
+        },
+        Address: {
+            type: String,
+            trim: true,
+        },
+        Payment_information: {
+            type: String,
             trim: true,
         },
     },

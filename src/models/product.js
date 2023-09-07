@@ -10,10 +10,26 @@ const productSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
+        Category: {
+            type: String,
+            trim: true,
+        },
         price: {
             type: Number,
             default: 0,
         },
+        Stock_Quantity: {
+            type: Number,
+            default: 0,
+        },
+        manufacturer: {
+            type: String,
+            trim: true,
+        },
+        ratings_and_reviews: {
+            type: String,
+            trim: true,
+        }
     },
     {
         timestamps: true,
