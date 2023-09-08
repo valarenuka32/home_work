@@ -15,6 +15,14 @@ const orderItemSchema = new mongoose.Schema(
             default: Date.now(),
             trim: true,
         },
+        orders: {
+            type: mongoose.Types.ObjectId,
+            ref: "orders",
+        },
+        products: {
+            type: mongoose.Types.ObjectId,
+            ref: "products",
+        },
     },
     {
         timestamps: true,

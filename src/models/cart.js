@@ -13,7 +13,15 @@ const cartSchema = new mongoose.Schema(
         Quantity: {
             type: Number,
             default: 0,
-        }
+        },
+        users: {
+            type: mongoose.Types.ObjectId,
+            ref: "users",
+        },
+        products: {
+            type: mongoose.Types.ObjectId,
+            ref: "products",
+        },
     },
     {
         timestamps: true,

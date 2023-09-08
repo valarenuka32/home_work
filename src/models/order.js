@@ -3,13 +3,17 @@ const mongoose = require("mongoose");
 const orderSchema = new mongoose.Schema(
     {
         order_date: {
-            type:Date,
-            default:Date.now(),
-            trim:true,
+            type: Date,
+            default: Date.now(),
+            trim: true,
         },
-        Status:{
-          type:String,
-          trim:true,
+        Status: {
+            type: String,
+            trim: true,
+        },
+        users: {
+            type: mongoose.Types.ObjectId,
+            ref: "users"
         },
     },
     {

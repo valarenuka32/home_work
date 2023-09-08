@@ -11,8 +11,16 @@ const paymentSchema = new mongoose.Schema(
             default: 0,
         },
         transaction_date: {
-            type:Date,
-            default:Date.now(),
+            type: Date,
+            default: Date.now(),
+        },
+        users: {
+            type: mongoose.Types.ObjectId,
+            ref: "users",
+        },
+        orders: {
+            type: mongoose.Types.ObjectId,
+            ref: "orders",
         },
     },
     {
