@@ -6,14 +6,14 @@ const validate = require("../middlewares/validate");
 
 const router = express.Router();
 
-// create user
+// create order
 router.post(
     "/create-order",
     validate(orderValidation.createOrder),
     orderCantroller.createOrder
 );
 
-// // get user
+// // get order
 router.get(
     "/list",
     orderCantroller.orderList
