@@ -11,9 +11,13 @@ const orderSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        users: {
+        users_name: {
             type: mongoose.Types.ObjectId,
             ref: "users"
+        },
+        is_active: {
+            type: Boolean,
+            default: false,
         },
     },
     {

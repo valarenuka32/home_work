@@ -29,7 +29,11 @@ const productSchema = new mongoose.Schema(
         ratings_and_reviews: {
             type: String,
             trim: true,
-        }
+        },
+        is_active: {
+            type: Boolean,
+            default: false,
+        },
     },
     {
         timestamps: true,

@@ -10,7 +10,7 @@ const createUser = async (reqBody) => {
 };
 
 const userList = async (req, res) => {
-    return user.find();
+    return user.find({$or:[{is_active:true}]});
 };
 
 const deleteRecord = async (userId) => {
