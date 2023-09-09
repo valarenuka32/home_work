@@ -11,7 +11,7 @@ const orderSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        users_name: {
+        users: {
             type: mongoose.Types.ObjectId,
             ref: "users"
         },

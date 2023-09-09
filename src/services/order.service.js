@@ -10,7 +10,8 @@ const createOrder = async (reqBody) => {
 };
 
 const orderList = async (req, res) => {
-    return order.find();
+    return order.find()
+    .populate("users")
 };
 
 const deleteRecord = async (orderId) => {

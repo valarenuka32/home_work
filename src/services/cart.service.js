@@ -10,7 +10,9 @@ const createcart = async (reqBody) => {
 };
 
 const cartList = async (req, res) => {
-    return cart.find();
+    return cart.find()
+    .populate("users")
+    .populate("products")
 };
 
 const deleteRecord = async (cartId) => {
