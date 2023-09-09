@@ -1,4 +1,4 @@
-const { orderitem } = require("../models");
+const { orderItem } = require("../models");
 
 /**
  * Create orderitem
@@ -6,23 +6,25 @@ const { orderitem } = require("../models");
  * @returns {Promise<user>}
  */
 const createOrderitem = async (reqBody) => {
-    return orderitem.create(reqBody);
+    return orderItem.create(reqBody);
 };
 
 const orderitemList = async (req, res) => {
-    return orderitem.find();
+    return orderItem.find()
+    .populate("orders")
+    .populate("products")
 };
 
 const deleteRecord = async (orderitemId) => {
-    return orderitem.findByIdAndDelete(orderitemId);
+    return orderItem.findByIdAndDelete(orderitemId);
 };
 
 const getOrderitemById = async (orderitemId) => {
-    return orderitem.findById(orderitemId);
+    return orderItem.findById(orderitemId);
 };
 
 const updateDetiles = async (orderitemId, updateBody) => {
-    return orderitem.findByIdAndUpdate(orderitemId, { $set: updateBody });
+    return orderItem.findByIdAndUpdate(orderitemId, { $set: updateBody });
 };
 
 

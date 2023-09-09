@@ -10,7 +10,9 @@ const createPayment = async (reqBody) => {
 };
 
 const paymentList = async (req, res) => {
-    return payment.find();
+    return payment.find()
+    .populate("users")
+    .populate("orders");
 };
 
 const deleteRecord = async (paymentId) => {

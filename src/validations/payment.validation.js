@@ -6,7 +6,9 @@ const createPayment = {
     body: Joi.object().keys({
         payment_method: Joi.string().required().trim(),
         amount: Joi.number().integer().required(),
-        transaction_date: Joi.number().integer().required(),
+        transaction_date: Joi.date().required(),
+        users: Joi.string(),
+        orders: Joi.string(),
     }),
 };
 

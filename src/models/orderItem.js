@@ -11,8 +11,7 @@ const orderItemSchema = new mongoose.Schema(
             default: 0,
         },
         time_of_purchase: {
-            type: Date,
-            default: Date.now(),
+            type:Number,
             trim: true,
         },
         orders: {
