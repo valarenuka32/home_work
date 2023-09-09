@@ -10,7 +10,7 @@ const createProduct = async (reqBody) => {
 };
 
 const productList = async (req, res) => {
-    return product.find();
+    return product.find({$or:[{is_active:false}]});
 };
 
 const deleteRecord = async (productId) => {

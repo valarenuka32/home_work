@@ -10,7 +10,7 @@ const createOrderitem = async (reqBody) => {
 };
 
 const orderitemList = async (req, res) => {
-    return orderItem.find()
+    return orderItem.find({$or:[{is_active:true,Quantity:10}]})
     .populate("orders")
     .populate("products")
 };

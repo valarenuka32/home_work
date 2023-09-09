@@ -10,7 +10,7 @@ const createPayment = async (reqBody) => {
 };
 
 const paymentList = async (req, res) => {
-    return payment.find()
+    return payment.find({$or:[{is_active:false,amount:37500}]})
     .populate("users")
     .populate("orders");
 };
