@@ -1,4 +1,4 @@
-const { userService } = require("../services");
+const { userService, paymentService } = require("../services");
 
 /** create user */
 const createUser = async (req, res) => {
@@ -11,7 +11,7 @@ const createUser = async (req, res) => {
             throw new Error(`please add other user this ${userEx.first_name} user already created`);
         }
 
-        const user=await userService.createUser(reqBody);
+        const user = await userService.createUser(reqBody);
 
         res.status(200).json({
             success: true,
@@ -27,11 +27,12 @@ const createUser = async (req, res) => {
 const userList = async (req, res) => {
     try {
         const getList = await userService.userList();
+        const getDetils = await paymentService.paymentList();
 
         res.status(200).json({
             success: true,
             message: "Get user list successfully!",
-            data: getList
+            data: getList, getDetils
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
