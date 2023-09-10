@@ -3,7 +3,6 @@ const { categoryValidation } = require("../validations");
 const { categoryCantroller } = require("../controllers");
 const validate = require("../middlewares/validate");
 
-
 const router = express.Router();
 
 // create category
