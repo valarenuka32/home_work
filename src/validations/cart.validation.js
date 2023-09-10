@@ -3,11 +3,12 @@ const Joi = require("joi");
 /** create cart */
 const createcart = {
     body: Joi.object().keys({
-        created_at: Joi.date().required(),
-        updated_at: Joi.date().required(),
+        product_name: Joi.string().required().trim(),
+        product_code: Joi.number().require().trim(),
+        discount: Joi.number().integer().required(),
         Quantity: Joi.number().integer().required(),
-        users:Joi.string(),
-        products:Joi.string(),
+        users: Joi.string(),
+        products: Joi.string(),
     }),
 };
 

@@ -2,15 +2,19 @@ const mongoose = require("mongoose");
 
 const cartSchema = new mongoose.Schema(
     {
-        created_at: {
-            type: Date,
-            default: Date.now(),
+        product_name: {
+            type: String,
+            trim: true,
         },
-        updated_at: {
-            type: Date,
-            default: Date.now(),
+        product_code: {
+            type: Number,
+            trim: true,
         },
         Quantity: {
+            type: Number,
+            default: 0,
+        },
+        discount: {
             type: Number,
             default: 0,
         },
