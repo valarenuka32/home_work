@@ -1,10 +1,3 @@
 module.exports.user = require("./user");
 module.exports.category = require("./category");
 module.exports.product = require("./product");
-module.exports.grocery = require("./grocery");
-module.exports.fashion = require("./fashion");
-module.exports.electroincs = require("./electronics");
-module.exports.furniture = require("./furniture");
-module.exports.appliances = require("./appliances");
-module.exports.footwear = require("./footwear");
-module.exports.travel = require("./footwear");
