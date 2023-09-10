@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const cartSchema = new mongoose.Schema(
     {
-        items_name: {
+        product_name: {
             type: String,
             trim: true,
         },
@@ -12,9 +12,11 @@ const cartSchema = new mongoose.Schema(
         },
         quantity: {
             type: Number,
+            default:0,
         },
         discount: {
             type: Number,
+            default:0,
         },
         is_active: {
             type: Boolean,
