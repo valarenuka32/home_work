@@ -15,7 +15,7 @@ router.post(
 
 // // get product
 router.get(
-    "/list",
+    "/product-list",
     productCantroller.productList
 );
 

@@ -1,6 +1,6 @@
 const { productService } = require("../services");
 
-/** create user */
+/** create poduct */
 const createProduct = async (req, res) => {
     try {
         const reqBody = req.body;
