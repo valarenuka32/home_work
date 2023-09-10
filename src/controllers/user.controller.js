@@ -23,7 +23,7 @@ const createUser = async (req, res) => {
     }
 };
 
-// // get user list
+// get user list
 const userList = async (req, res) => {
     try {
         const getList = await userService.userList();

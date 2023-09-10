@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema(
     {
-        name: {
+
+        product_name: {
             type: String,
             trim: true,
         },
@@ -14,6 +15,10 @@ const productSchema = new mongoose.Schema(
             type: Number,
             default: 0,
         },
+        Stock_Quantity: {
+            type: Number,
+            default: 0,
+        }
     },
     {
         timestamps: true,
