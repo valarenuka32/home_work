@@ -7,16 +7,16 @@ const cartSchema = new mongoose.Schema(
             trim: true,
         },
         product_code: {
-            type: String,
-            trim: true,
+            type: Number,
+            default: 444,
         },
         quantity: {
             type: Number,
-            default:0,
+            default: 0,
         },
         discount: {
             type: Number,
-            default:0,
+            default: 0,
         },
         is_active: {
             type: Boolean,
