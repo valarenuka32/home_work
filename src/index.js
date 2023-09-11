@@ -6,7 +6,6 @@ const config = require("./config/config");
 const routes=require("./routes")
 const { connectDB } = require("./db/dbconnection");
 
-
 // Database connection
 connectDB()
 
