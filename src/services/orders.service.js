@@ -10,7 +10,8 @@ const createorders = async (reqBody) => {
 };
 
 const ordersList = async (req, res) => {
-    return orders.find();
+    return orders.find()
+    .populate("products");
 };
 
 const deleteRecord = async (ordersId) => {

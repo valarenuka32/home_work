@@ -10,7 +10,8 @@ const createsubCategory = async (reqBody) => {
 };
 
 const subCategoryList = async (req, res) => {
-    return subCategory.find();
+    return subCategory.find()
+    .populate("categorys");
 };
 
 const deleteRecord = async (subCategoryId) => {

@@ -10,7 +10,9 @@ const createProduct = async (reqBody) => {
 };
 
 const productList = async (req, res) => {
-    return product.find();
+    return product.find()
+    .populate("categorys")
+    .populate("subCategory")
 };
 
 const deleteRecord = async (productId) => {

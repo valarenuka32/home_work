@@ -21,7 +21,15 @@ const cartSchema = new mongoose.Schema(
         is_active: {
             type: Boolean,
             default: true,
-        }
+        },
+        users: {
+            type: mongoose.Types.ObjectId,
+            ref: "users",
+        },
+        products: {
+            type: mongoose.Types.ObjectId,
+            ref: "products",
+        },
     },
     {
         timestamps: true,
