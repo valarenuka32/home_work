@@ -1,4 +1,4 @@
-const { cartService } = require("../services");
+const { cartService,productService } = require("../services");
 
 /** create cart */
 const createcart = async (req, res) => {
@@ -25,11 +25,12 @@ const createcart = async (req, res) => {
 const cartList = async (req, res) => {
     try {
         const getList = await cartService.cartList();
+        const getDetiles = await productService.productList();
 
         res.status(200).json({
             success: true,
             message: "Get cart list successfully!",
-            data: getList
+            data: getList,getDetiles
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });

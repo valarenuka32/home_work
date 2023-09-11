@@ -1,4 +1,4 @@
-const { categoryService } = require("../services");
+const { categoryService ,subCategoryService} = require("../services");
 
 /** create category */
 const createcategory = async (req, res) => {
@@ -25,11 +25,12 @@ const createcategory = async (req, res) => {
 const categoryList = async (req, res) => {
     try {
         const getList = await categoryService.categoryList();
+        const getDetiles = await subCategoryService.subCategoryList();
 
         res.status(200).json({
             success: true,
             message: "Get category list successfully!",
-            data: getList
+            data: getList,getDetiles
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });
