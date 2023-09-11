@@ -15,8 +15,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
+/** Get image */
+app.use(express.static(`./public`));
+
 // route namespace
 app.use("/v1", routes);
+
 const server = http.createServer(app);
 
 server.listen(config.port, () => {
