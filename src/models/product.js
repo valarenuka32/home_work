@@ -17,7 +17,15 @@ const productSchema = new mongoose.Schema(
         Stock_Quantity: {
             type: Number,
             default: 0,
-        }
+        },
+        categorys: {
+            type: mongoose.Types.ObjectId,
+            ref: "categorys",
+        },
+        subCategory: {
+            type: mongoose.Types.ObjectId,
+            ref: "subCategory",
+        },
     },
     {
         timestamps: true,
