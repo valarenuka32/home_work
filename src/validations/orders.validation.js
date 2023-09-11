@@ -8,6 +8,7 @@ const createorders = {
         ship_date: Joi.date().required(),
         total_amount: Joi.number().integer().required(),
         shipping_address: Joi.string().trim().required(),
+        users:Joi.string(),
         products:Joi.string(),
     }),
 };
