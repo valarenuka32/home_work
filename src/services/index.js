@@ -4,3 +4,4 @@ module.exports.cartService=require("./cart.service");
 module.exports.categoryService=require("./category.service");
 module.exports.ordersService=require("./orders.service");
 module.exports.subCategoryService=require("./subcateory.service");
+module.exports.SubchildCategoryService=require("./Subchildcategory.service");

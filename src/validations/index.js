@@ -4,3 +4,4 @@ module.exports.cartValidation=require("./cart.validation");
 module.exports.categoryValidation=require("./category.validation");
 module.exports.ordersValidation=require("./orders.validation");
 module.exports.subCategoryValidation=require("./subcategory.validation");
+module.exports.SubchildCategoryValidation=require("./Subchildcategory.validation");
