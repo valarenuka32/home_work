@@ -11,7 +11,7 @@ const createSubchildCategory = async (reqBody) => {
 
 const SubchildCategoryList = async (req, res) => {
     return SubchildCategory.find()
-    .populate("categorys")
+    .populate("category")
     .populate("subCategory")
 };
 
