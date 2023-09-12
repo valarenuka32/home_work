@@ -9,7 +9,8 @@ const createProduct = {
         Category: Joi.string().required().trim(),
         price: Joi.number().integer().required(),
         Stock_Quantity: Joi.number().integer().required(),
-        categorys: Joi.string(),
+        product_image:Joi.string().allow(""),
+        category: Joi.string(),
         subCategory: Joi.string(),
     }),
 };

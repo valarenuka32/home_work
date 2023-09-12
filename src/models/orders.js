@@ -29,10 +29,6 @@ const orderSchema = new mongoose.Schema(
             ref: "products",
         },
     },
-    {
-        timestamps: true,
-        versionKey: false,
-    },
 );
 
 const orders = mongoose.model("orders", orderSchema);

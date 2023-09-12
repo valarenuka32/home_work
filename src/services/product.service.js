@@ -11,7 +11,7 @@ const createProduct = async (reqBody) => {
 
 const productList = async (req, res) => {
     return product.find()
-    .populate("categorys")
+    .populate("category")
     .populate("subCategory")
 };
 

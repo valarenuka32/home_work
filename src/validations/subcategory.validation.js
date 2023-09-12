@@ -6,7 +6,7 @@ const createsubCategory = {
         subCategory_name: Joi.string().required().trim(),
         subCategory_desc: Joi.string().required().trim(),
         price: Joi.number().required(),
-        categorys: Joi.string(),
+        category: Joi.string(),
     }),
 };
 

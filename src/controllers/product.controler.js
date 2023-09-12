@@ -6,15 +6,17 @@ const createProduct = async (req, res) => {
         const reqBody = req.body;
         console.log(reqBody);
 
-        const product = await productService.createProduct(reqBody);
-        if (!product) {
-            throw new Error("Something went wrong, please try again or later!");
+        if (req.file) {
+            reqBody.product_image = req.file.filename;
+        } else {
+            throw new Error("product image is required");
         }
 
+        const createProduct = await productService.createProduct(reqBody);
         res.status(200).json({
             success: true,
             message: "product detiles create successfully!",
-            data: { product },
+            data: { createProduct },
         });
     } catch (error) {
         res.status(400).json({ success: false, message: error.message });

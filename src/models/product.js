@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const config = require("../config/config");
 
 const productSchema = new mongoose.Schema(
     {
@@ -10,6 +11,10 @@ const productSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
+        product_image:{
+           type:String,
+           trim:true,
+        },
         price: {
             type: Number,
             default: 0,
@@ -18,7 +23,7 @@ const productSchema = new mongoose.Schema(
             type: Number,
             default: 0,
         },
-        categorys: {
+        category: {
             type: mongoose.Types.ObjectId,
             ref: "categorys",
         },
@@ -30,7 +35,14 @@ const productSchema = new mongoose.Schema(
     {
         timestamps: true,
         versionKey: false,
-    }
+        toJSON: {
+            transform: function (doc, data) {
+                if (data?.product_image) {
+                    data.product_image = `${config.base_url}product_image/${data.product_image}`;
+                }
+            },
+        },
+    },
 );
 
 const product = mongoose.model("products", productSchema);
