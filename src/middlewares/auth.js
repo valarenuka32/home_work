@@ -15,7 +15,7 @@ const auth = () => async (req, res, next) => {
             token.replace("Bearer ", ""),
             config.jwt.secret_key
         );
-        if (decoded) {
+        if (!decoded) {
             return next(new Error("Please enter valid token!"));
         }
         const user = await user.findOne({ _id: decoded.user });

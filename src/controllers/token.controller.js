@@ -1,7 +1,7 @@
 const { tokenService } = require("../services");
 const moment = require("moment");
 
-/** Create token in jsonwebtoken and save in our database. */
+/** Create token in jsonwebtoken and save  */
 const generateToken = async (req, res) => {
   try {
     const reqBody = req.body;
