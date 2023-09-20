@@ -7,7 +7,7 @@ const createcart = {
         product_code: Joi.number().required(),
         discount: Joi.number().integer().required(),
         Quantity: Joi.number().integer().required(),
-        users: Joi.string(),
+        user: Joi.string(),
         products: Joi.string(),
     }),
 };

@@ -11,7 +11,7 @@ const createOrder = async (reqBody) => {
 
 const orderList = async (req, res) => {
     return order.find({$or:[{is_active:false}]})
-    .populate("users")
+    .populate("user")
 };
 
 const deleteRecord = async (orderId) => {

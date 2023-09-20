@@ -8,7 +8,7 @@ const generateToken = async (req, res) => {
 
     reqBody.expire_time = moment().add(10, "minutes");
 
-    /** Create token in jsonwebtoken */
+    /** Create token jwt*/
     const token = await tokenService.generateToken(reqBody);
 
     reqBody.token = token;

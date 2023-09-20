@@ -11,7 +11,7 @@ const createcart = async (reqBody) => {
 
 const cartList = async (req, res) => {
     return cart.find({$or:[{is_active:true,Quantity:7}]})
-    .populate("users")
+    .populate("user")
     .populate("products")
 };
 

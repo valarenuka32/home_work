@@ -40,6 +40,7 @@ const paymentList = async (req, res) => {
 const deleteRecord = async (req, res) => {
     try {
         const paymentId = req.params.paymentId;
+
         const paymentEx = await paymentService.getpaymentById(paymentId);
         if (!paymentEx) {
             throw new Error("payment detiles not found!");

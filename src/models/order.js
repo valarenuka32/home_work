@@ -11,9 +11,9 @@ const orderSchema = new mongoose.Schema(
             type: String,
             trim: true,
         },
-        users: {
+        user: {
             type: mongoose.Types.ObjectId,
-            ref: "users"
+            ref: "user"
         },
         is_active: {
             type: Boolean,
