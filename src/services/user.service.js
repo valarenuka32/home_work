@@ -27,7 +27,11 @@ const updateDetiles = async (userId, updateBody) => {
 
 const getUserByName = async (first_name) => {
     return user.findOne({ first_name });
-}
+};
+
+const getUserByEmail=async(email)=>{
+   return user.findOne({email});
+};
 
 
 module.exports = {
@@ -36,5 +40,6 @@ module.exports = {
     deleteRecord,
     getUserById,
     updateDetiles,
-    getUserByName
+    getUserByName,
+    getUserByEmail
 };

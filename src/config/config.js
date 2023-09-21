@@ -1,14 +1,21 @@
-const joi = require("joi");
+const Joi = require("joi");
 const dotenv = require("dotenv");
 
 dotenv.config();
 
-const envVarsSchema = joi.object({
-    PORT: joi.number().default(7000),
-    MONGODB_URL: joi.string().trim().description("mongoodb url"),
-    JWT_SECRET_KEY: joi.string()
+const envVarsSchema = Joi.object({
+    PORT: Joi.number().default(7000),
+    MONGODB_URL: Joi.string().trim().description("mongoodb url"),
+    JWT_SECRET_KEY: Joi.string()
         .description("Jwt sectreat key")
         .default("thisisJwtsecreat_key"),
+    SMTP_HOST: Joi.string().description("server that will send the emails"),
+    SMTP_PORT: Joi.number().description("port to connect to the email server"),
+    SMTP_USERNAME: Joi.string().description("username for email server"),
+    SMTP_PASSWORD: Joi.string().description("password for email server"),
+    EMAIL_FROM: Joi.string().description(
+        "the from field in the emails sent by the app"
+    ),
 }).unknown();
 
 const { value: envVars, error } = envVarsSchema
@@ -28,7 +35,17 @@ module.exports = {
             useUnifiedTopology: true,
         },
     },
-    jwt:{
-        secret_key:envVars.JWT_SECRET_KEY,
+    jwt: {
+        secret_key: envVars.JWT_SECRET_KEY,
+    },
+    email: {
+        smtp: {
+            host: envVars.SMTP_HOST,
+            port: envVars.SMTP_PORT,
+            auth: {
+                user: envVars.SMTP_USERNAME,
+                pass: envVars.SMTP_PASSWORD,
+            },
+        },
     },
 };

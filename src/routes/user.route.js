@@ -31,4 +31,10 @@ router.put(
     userCantroller.updateDetiles
 );
 
+// send mile
+router.post(
+    "/send-mail",
+    validate(userValidation.sendMail),
+    userCantroller.sendMail
+);
 module.exports = router;
