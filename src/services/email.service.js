@@ -10,7 +10,7 @@ let transport = nodemailer.createTransport({
   },
 });
 
-/** Send mail */
+//  Send mail
 const sendMail = async (to, subject, text) => {
   try {
     return transport.sendMail({
