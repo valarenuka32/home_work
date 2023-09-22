@@ -85,10 +85,34 @@ const updateDetiles = async (req, res) => {
         });
     }
 };
+
+// send maile
+const sendMail=async(req,res)=>{
+try {
+    const reqBody=req.body;
+
+    const sendEMail=await userService.sendMail(
+        reqBody.email,
+        reqBody.subject,
+        reqBody.text
+    );
+    console.log('send maile done...');
+    if(!sendEMail){
+        throw new Error("Something went wrong, please try again or later");
+    }
+    res.status(200).json({
+        success:true,
+        message:"Email send successfully!"
+    })
+} catch (error) {
+    res.status(400).json({success:false,message:error.message});
+};
+}
 module.exports = {
     createUser,
     userList,
     deleteRecord,
-    updateDetiles
+    updateDetiles,
+    sendMail
 };
 
