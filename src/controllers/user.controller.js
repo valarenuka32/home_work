@@ -1,4 +1,4 @@
-const { userService, paymentService } = require("../services");
+const { userService, emailService } = require("../services");
 
 /** create user */
 const createUser = async (req, res) => {
@@ -91,7 +91,7 @@ const sendMail=async(req,res)=>{
 try {
     const reqBody=req.body;
 
-    const sendEMail=await userService.sendMail(
+    const sendEMail=await emailService.sendMail(
         reqBody.email,
         reqBody.subject,
         reqBody.text
