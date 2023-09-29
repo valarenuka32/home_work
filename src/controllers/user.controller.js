@@ -1,4 +1,6 @@
 const { userService, emailService } = require("../services");
+const ejs = require("ejs");
+const path = require("path");
 
 /** create user */
 const createUser = async (req, res) => {
@@ -12,6 +14,9 @@ const createUser = async (req, res) => {
         }
 
         const user = await userService.createUser(reqBody);
+        if (!user) {
+            throw new Error("Something went wrong, please try again or later!");
+        }
 
         res.status(200).json({
             success: true,
@@ -87,26 +92,26 @@ const updateDetiles = async (req, res) => {
 };
 
 // send maile
-const sendMail=async(req,res)=>{
-try {
-    const reqBody=req.body;
+const sendMail = async (req, res) => {
+    try {
+        const reqBody = req.body;
 
-    const sendEMail=await emailService.sendMail(
-        reqBody.email,
-        reqBody.subject,
-        reqBody.text
-    );
-    console.log('send maile done...');
-    if(!sendEMail){
-        throw new Error("Something went wrong, please try again or later");
-    }
-    res.status(200).json({
-        success:true,
-        message:"Email send successfully!"
-    })
-} catch (error) {
-    res.status(400).json({success:false,message:error.message});
-};
+        const sendEMail = await emailService.sendMail(
+            reqBody.email,
+            reqBody.subject,
+            reqBody.text
+        );
+        console.log('send maile done...');
+        if (!sendEMail) {
+            throw new Error("Something went wrong, please try again or later");
+        }
+        res.status(200).json({
+            success: true,
+            message: "Email send successfully!"
+        })
+    } catch (error) {
+        res.status(400).json({ success: false, message: error.message });
+    };
 }
 module.exports = {
     createUser,
