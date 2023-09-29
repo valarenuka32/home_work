@@ -13,19 +13,19 @@ router.post(
     userCantroller.createUser
 );
 
-// // get user
+//get user
 router.get(
     "/list",
     userCantroller.userList
 );
 
-// // dalete
+// dalete
 router.delete(
     "/delete-user/:userId",
     userCantroller.deleteRecord
 );
 
-// // update
+// update
 router.put(
     "/update/:userId",
     userCantroller.updateDetiles
